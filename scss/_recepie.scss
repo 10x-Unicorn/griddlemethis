@@ -1,6 +1,6 @@
 
 
-.recepie_area{
+.recipe_area{
     padding-top: 200px;
     padding-bottom: 50px;
     @media #{$mobile_device} {
@@ -23,7 +23,7 @@
         @media #{$mobile_device}{
             padding-bottom: 0;
         }
-        .single_recepie{
+        .single_recipe{
             margin-bottom: 80px;
             @media #{$mobile_device}{
                 margin-bottom: 40px;
@@ -48,9 +48,9 @@
             padding-bottom: 50px;
         }
     }
-    .single_recepie{
+    .single_recipe{
         margin-bottom: 50px;
-        .recepie_thumb {
+        .recipe_thumb {
             max-width: 300px;
             max-height: 300px;
             border-radius: 50%;
@@ -100,8 +100,8 @@
     }
 }
 
-// recepie_videoes_area 
-.recepie_videoes_area{
+// recipe_videos_area
+.recipe_videos_area{
     padding-top: 100px;
     padding-bottom: 130px;
     @media #{$mobile_device} {
@@ -112,7 +112,7 @@
         padding-top: 50px;
         padding-bottom: 50px;
     }
-    .recepie_info{
+    .recipe_info{
         padding-right: 60px;
         @media #{$mobile_device} {
             padding-right: 0;
@@ -328,7 +328,7 @@
 
 // latest_trand_area 
 .latest_trand_area{
-    background-image: url(../img/recepie/banner.png);
+    background-image: url(../img/recipe/banner.png);
     padding: 150px 0;
     background-size: cover;
     background-position: center;
@@ -360,7 +360,7 @@
     }
 }
 
-.recepie_header_area{
+.recipe_header_area{
     padding-top: 195px;
     padding-bottom: 96px;
     @media #{$mobile_device} {
@@ -375,7 +375,7 @@
         padding-top: 80px;
         padding-bottom: 40px;
     }
-    .recepie_text{
+    .recipe_text{
         h3{
             font-size: 48px;
             color: #000000;

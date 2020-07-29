@@ -1,4 +1,4 @@
-.recepie_details_area{
+.recipe_details_area{
     padding-top: 200px;
     @media #{$mid_device} {
         padding-top: 100px;
@@ -9,13 +9,13 @@
     @media #{$tablet_device} {
         padding-top: 100px;
     }
-    .recepies_thumb{
+    .recipes_thumb{
         margin-bottom: 60px;
         img{
             width: 100%;
         }
     }
-    .recepies_info{
+    .recipes_info{
         padding-left: 68px;
         @media #{$tablet_device} {
            padding-left: 30px;
@@ -33,7 +33,7 @@
             color: #777777;
             font-size: 14px;
         }
-        .resepies_details{
+        .recipes_details{
             margin-top: 38px;
             margin-bottom: 30px;
             ul{
@@ -69,7 +69,7 @@
             }
         }
     }
-    .recepies_text{
+    .recipes_text{
         p{
             font-size: 14px;
             color: #777777;
