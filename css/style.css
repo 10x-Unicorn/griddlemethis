@@ -1266,8 +1266,8 @@ h3 {
   right: 0;
   z-index: 990;
   transform: translateY(70px);
-  transition: transform 500ms ease, background 500ms ease;
-  -webkit-transition: transform 500ms ease, background 500ms ease;
+  /*transition: transform 500ms ease, background 500ms ease;*/
+  /*-webkit-transition: transform 500ms ease, background 500ms ease;*/
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
   padding: 10px 0px;
   background: rgba(255, 255, 255, 0.96);
