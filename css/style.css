@@ -1427,7 +1427,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/gmt\ back.png);
+  background-image: url(../img/BSstock/bsBreak.jpg);
 }
 
 /* line 4, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
@@ -1516,12 +1516,14 @@ h3 {
   font-family: "Satisfy", cursive;
   font-size: 100px;
   text-transform: capitalize;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 767px) {
   /* line 61, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
   .slider_area .single_slider .slider_text h3 br {
     display: none;
+
   }
 }
 
