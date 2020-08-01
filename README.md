@@ -1,2 +1,2 @@
 # griddlemethis
-A cooking website for our dad
+A modern cookbook website
