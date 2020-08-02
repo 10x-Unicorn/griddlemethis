@@ -2490,7 +2490,6 @@ h3 {
   font-weight: 400;
   color: #fff;
   text-transform: capitalize;
-  margin-bottom: 40px;
 }
 
 @media (max-width: 767px) {
@@ -2631,6 +2630,13 @@ h3 {
   line-height: 26px;
   margin-bottom: 40px;
   margin-top: 50px;
+}
+
+.footer .footer_top .footer_widget .newsletter_text_uni {
+  font-size: 14px;
+  color: #919191;
+  line-height: 26px;
+  margin-bottom: 40px;
 }
 
 /* line 186, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_footer.scss */
