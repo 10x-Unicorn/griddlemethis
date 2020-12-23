@@ -1,1 +1,2 @@
+RewriteEngine On
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
