@@ -1962,7 +1962,14 @@ h3 {
 .recipe_details_area .recipes_thumb img {
   width: 100%;
 }
+.recipe_details_area .recipes_mult {
+  margin-bottom: 60px;
+}
 
+.recipe_details_area .recipes_mult img {
+  width: 300px;
+  height: 300px;
+}
 /* line 18, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recipe_details.scss */
 .recipe_details_area .recipes_info {
   padding-left: 68px;
