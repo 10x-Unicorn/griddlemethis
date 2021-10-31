@@ -1427,7 +1427,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/BSstock/bsBreak.jpg);
+  background-image: url(../img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_preparation.jpg);
 }
 
 /* line 4, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
@@ -5246,6 +5246,8 @@ del {
 /* line 93, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_elements.scss */
 h1 {
   font-size: 36px;
+  text-align: center;
+  padding-bottom: 50px;
 }
 
 /* line 97, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_elements.scss */
