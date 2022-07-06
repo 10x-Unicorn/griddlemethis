@@ -5,7 +5,7 @@ A modern cookbook website dedicated to griddling.
 This site is basic HTML/CSS coding modified from this [template](https://colorlib.com/wp/template/tasty-recipes/) 
 via [Colorlib](https://colorlib.com).
 
-###File Structure
+### File Structure
 Helpful files/directories are as follows:
 - The original style guide can be find at `./220 Testy Recipes DOC`.
 - The `css/fonts` folders are self-explanatory 
@@ -30,7 +30,7 @@ Helpful files/directories are as follows:
 └── README.md
 ```
 
-##Deployment
+## Deployment
 The deployment of the site is handled via [Github](https://github.com/) and [Netlify](https://www.netlify.com/).
 
 Github provides Internet hosting for software development and version control using Git. It offers the distributed
@@ -44,8 +44,8 @@ Given the limitations of the purely static model, the company later expanded ser
 systems, and features of serverless computing to handle websites with interactive features 
 (such as email forms in our use case).
  
-##Contribution Guide
-###Recipes
+## Contribution Guide
+### Recipes
 For contributing a recipe one must make a `repice_name.html` page. It is best to copy another webpage for formatting 
 and edit text/pictures. The basic webpage format goes as following:
 
@@ -77,7 +77,7 @@ first open the file then you want to follow these steps:
 
 The 3 most recent recipes should be added to `index.html`
 
-###Newletters
+### Newletters
 
 We use [Canva](https://www.canva.com/) to make our newsletters
 
