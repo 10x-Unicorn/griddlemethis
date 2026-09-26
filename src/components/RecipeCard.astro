@@ -7,13 +7,15 @@ import { formatMinutes } from '../lib/recipes';
 interface Props {
   recipe: CollectionEntry<'recipes'>;
   eager?: boolean;
+  /** Normalized text for the recipe list's search box (see lib/recipes searchText). */
+  searchText?: string;
 }
 
-const { recipe, eager = false } = Astro.props;
+const { recipe, eager = false, searchText } = Astro.props;
 const { title, category, totalMinutes, hero } = recipe.data;
 ---
 
-<li class="recipe-card" data-category={category}>
+<li class="recipe-card" data-category={category} data-search={searchText}>
   <div class="recipe-card__img">
     <Image
       src={hero}

@@ -9,11 +9,9 @@ import unicornLogo from '../assets/10xunicorn.png';
 interface Props {
   title: string;
   description?: string;
-  /** Show the Algolia search stylesheet (the box itself is placed by the page). */
-  search?: boolean;
 }
 
-const { title, description = 'Griddle Me This, Dad? Recipes from the backyard griddle.', search = false } = Astro.props;
+const { title, description = 'Griddle Me This, Dad? Recipes from the backyard griddle.' } = Astro.props;
 const fullTitle = title === 'Home' ? 'Griddle Me This, Dad?' : `${title} | Griddle Me This, Dad?`;
 const nav = [
   ['/recipes/', 'Recipes'],
@@ -38,14 +36,6 @@ const current = Astro.url.pathname;
     <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
     <link rel="icon" type="image/png" href="/favicon.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    {
-      search && (
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
-        />
-      )
-    }
     <slot name="head" />
   </head>
   <body>
