@@ -2,6 +2,7 @@
 import '../styles/site.css';
 import { Image } from 'astro:assets';
 import Icon from '../components/Icon.astro';
+import { EMAIL_HINT, EMAIL_PATTERN } from '../lib/forms';
 import logo from '../assets/logo.png';
 import unicornLogo from '../assets/10xunicorn.png';
 
@@ -116,9 +117,19 @@ const current = Astro.url.pathname;
           <div>
             <h2>Get new recipes by email</h2>
             <p>We’ll let you know when a new recipe goes up.</p>
-            <form class="subscribe" name="email_subscriber" method="POST" data-netlify="true">
+            <form class="subscribe" name="email_subscriber" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
               <label class="visually-hidden" for="emailSub">Email address</label>
-              <input class="input" id="emailSub" name="emailSub" type="email" required placeholder="you@example.com" />
+              <input
+                class="input"
+                id="emailSub"
+                name="emailSub"
+                type="email"
+                required
+                pattern={EMAIL_PATTERN}
+                title={EMAIL_HINT}
+                placeholder="you@example.com"
+              />
               <button class="btn" type="submit">Subscribe</button>
             </form>
           </div>
@@ -133,6 +144,27 @@ const current = Astro.url.pathname;
       </div>
     </footer>
 
+    <script>
+      // Browsers count a field of only spaces as filled in, so trim before
+      // checking required fields. (Netlify rewrites form tags and keeps only
+      // name/method/class, so match forms by method.)
+      for (const form of document.querySelectorAll<HTMLFormElement>('form[method="POST"]')) {
+        const fields = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input[required], textarea[required]');
+        const check = (field: HTMLInputElement | HTMLTextAreaElement) =>
+          field.setCustomValidity(field.value.trim() === '' ? 'Please fill this in.' : '');
+        fields.forEach((field) => field.addEventListener('input', () => check(field)));
+        form.addEventListener('submit', (event) => {
+          fields.forEach((field) => {
+            field.value = field.value.trim();
+            check(field);
+          });
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            form.reportValidity();
+          }
+        });
+      }
+    </script>
     <slot name="scripts" />
   </body>
 </html>
