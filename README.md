@@ -21,7 +21,7 @@ runs `npm run build` on every push and serves the `dist/` folder. All styling li
 ```
 
 ### Local development
-Requires Node 22+.
+Requires Node 22.12 or newer. Netlify builds with Node 24 (set in `netlify.toml`, which overrides the Node version in the Netlify dashboard).
 
 ```
 npm install
