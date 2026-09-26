@@ -13,7 +13,7 @@ for (const r of recipes) counts.set(r.data.category, (counts.get(r.data.category
 const categories = [...counts].sort((a, b) => b[1] - a[1]);
 ---
 
-<Base title="Recipes" description="Every Griddle Me This, Dad? recipe, newest first." headerSearch={false}>
+<Base title="Recipes" description="Every Griddle Me This, Dad? recipe, newest first.">
   <PageHead title="Recipes" eyebrow="The cookbook">
     <p class="lede">Every recipe we’ve cooked on the griddle, newest first.</p>
   </PageHead>

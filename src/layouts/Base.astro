@@ -10,15 +10,9 @@ import unicornLogo from '../assets/10xunicorn.png';
 interface Props {
   title: string;
   description?: string;
-  /** Show the search box in the header (the recipe list has its own). */
-  headerSearch?: boolean;
 }
 
-const {
-  title,
-  description = 'Griddle Me This, Dad? Recipes from the backyard griddle.',
-  headerSearch = true,
-} = Astro.props;
+const { title, description = 'Griddle Me This, Dad? Recipes from the backyard griddle.' } = Astro.props;
 const fullTitle = title === 'Home' ? 'Griddle Me This, Dad?' : `${title} | Griddle Me This, Dad?`;
 const nav = [
   ['/recipes/', 'Recipes'],
@@ -65,7 +59,7 @@ const current = Astro.url.pathname;
           </ul>
         </nav>
         <div class="header-actions">
-          {headerSearch && <SiteSearch />}
+          <SiteSearch />
           <details class="mobile-nav">
             <summary aria-label="Menu">
               <span class="icon-menu"><Icon name="menu" size={26} /></span>
