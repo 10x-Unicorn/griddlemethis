@@ -930,6 +930,22 @@ textarea.input {
 
 /* ---------- Print: just the recipe ---------- */
 @media print {
+  /* Ink on white paper: swap the dark palette for a light one, and use a light
+     colour scheme so native checkboxes print white. */
+  :root {
+    color-scheme: light;
+    --bg: #fff;
+    --surface: #fff;
+    --surface-2: #f1f1f1;
+    --ink: #111;
+    --ink-2: #333;
+    --ink-3: #666;
+    --line: #ccc;
+    --accent: #c2410c;
+    --accent-ink: #fff;
+    --ember: #b45309;
+    --star: #b45309;
+  }
   .site-header,
   .site-footer,
   .actions,
