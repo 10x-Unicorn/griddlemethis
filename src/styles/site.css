@@ -475,6 +475,13 @@ p {
 #search {
   min-width: min(100%, 320px);
 }
+/* Algolia's full-screen search (phones) and results dropdown (desktop) are
+   added to <body> at z-index 10, under the sticky header (50), which then hid
+   the search input. Lift them above it. */
+.aa-DetachedOverlay,
+.aa-Panel {
+  z-index: 100;
+}
 
 /* ---------- Recipe page ---------- */
 .recipe-hero {
