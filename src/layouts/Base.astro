@@ -3,6 +3,7 @@ import '../styles/site.css';
 import { Image } from 'astro:assets';
 import Icon from '../components/Icon.astro';
 import logo from '../assets/logo.png';
+import unicornLogo from '../assets/10xunicorn.png';
 
 interface Props {
   title: string;
@@ -124,7 +125,10 @@ const current = Astro.url.pathname;
         </div>
         <div class="footer-bottom">
           <span>© {new Date().getFullYear()} Griddle Me This, Dad?</span>
-          <span>Site by <a href="https://github.com/10x-Unicorn">10xUnicorn</a></span>
+          <a class="made-by" href="https://github.com/10x-Unicorn">
+            <span>Created and designed by 10xUnicorn</span>
+            <Image src={unicornLogo} alt="10xUnicorn" height={96} />
+          </a>
         </div>
       </div>
     </footer>

@@ -888,6 +888,19 @@ textarea.input {
 .site-footer a:hover {
   color: var(--accent);
 }
+.made-by {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.site-footer .made-by {
+  color: var(--ink-3);
+}
+.made-by img {
+  height: 48px;
+  width: auto;
+}
 .subscribe {
   display: flex;
   gap: 8px;
@@ -902,8 +915,9 @@ textarea.input {
   border-top: 1px solid var(--line);
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 8px 24px;
   font-size: 0.85rem;
   color: var(--ink-3);
 }
