@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
 import Icon from '../components/Icon.astro';
+import { EMAIL_HINT, EMAIL_PATTERN } from '../lib/forms';
 ---
 
 <Base title="Contact" description="Send your thoughts and recipe ideas to Griddle Me This, Dad?">
@@ -19,7 +20,16 @@ import Icon from '../components/Icon.astro';
         </div>
         <div class="field">
           <label for="email">Email</label>
-          <input class="input" id="email" name="email" type="email" autocomplete="email" required />
+          <input
+            class="input"
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            pattern={EMAIL_PATTERN}
+            title={EMAIL_HINT}
+          />
         </div>
       </div>
       <div class="field">

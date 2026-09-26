@@ -17,6 +17,7 @@
   --ember: #ffc53d;
   --star: #ffc53d;
   --char: #0c0a09;
+  --danger: #ff6b5e;
   --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px rgb(0 0 0 / 0.45);
 
   --font-display: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
@@ -906,6 +907,13 @@ html .aa-Panel .aa-powered-by {
   outline: 2px solid var(--accent);
   outline-offset: 0;
   border-color: transparent;
+}
+/* Only after the visitor has interacted with the field or tried to submit. */
+.input:user-invalid {
+  border-color: var(--danger);
+}
+.input:user-invalid:focus {
+  outline-color: var(--danger);
 }
 textarea.input {
   min-height: 180px;
