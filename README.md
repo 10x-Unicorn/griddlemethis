@@ -21,7 +21,7 @@ runs `npm run build` on every push and serves the `dist/` folder. All styling li
 ```
 
 ### Local development
-Requires Node 22+.
+Requires Node 22.12 or newer. Netlify builds with Node 24 (set in `netlify.toml`, which overrides the Node version in the Netlify dashboard).
 
 ```
 npm install
@@ -34,7 +34,8 @@ Recipes and newsletters can be added through [Pages CMS](https://pagescms.org), 
 any code. Editing the Markdown files by hand works too (see [Editing files directly](#editing-files-directly)).
 
 ### Adding a recipe or newsletter with Pages CMS
-1. Go to [app.pagescms.org](https://app.pagescms.org), sign in with GitHub and open this repository.
+1. Go to [app.pagescms.org](https://app.pagescms.org), sign in (with GitHub, or through the email invitation for
+   editors without a GitHub account) and open this repository.
 1. Switch to the **`content`** branch in Pages CMS's branch menu, not `master`. See [Why the `content` branch](#why-the-content-branch).
 1. Open **Recipes** (or **Newsletters**) and add a new entry.
 1. Fill in the form and upload photos. Full-size phone photos are fine: the build resizes them, converts them to WebP
@@ -59,7 +60,8 @@ inside the free plan and lets you check changes on the preview before they go li
 1. Someone with admin access to the `10x-Unicorn` GitHub organization signs in at
    [app.pagescms.org](https://app.pagescms.org) and installs the Pages CMS GitHub app on this repository.
 1. Create a `content` branch from `master` (from the branch dropdown on GitHub, or `git push origin master:content`).
-1. Give each editor a GitHub account with write access to the repository.
+1. Invite editors from Pages CMS by email. They don't need a GitHub account: invited collaborators can edit
+   content and media, but not settings like `.pages.yml`.
 1. In Netlify's site settings, turn on branch deploys for `content` so each save gets a preview link.
 
 The editor forms are defined in `.pages.yml`. They mirror the fields in `src/content.config.ts`, so if a field is added
