@@ -1,46 +1,32 @@
-@import '@fontsource-variable/fraunces/opsz.css';
+@import '@fontsource/bebas-neue/index.css';
 @import '@fontsource-variable/inter/index.css';
 
 /* ---------- Tokens ---------- */
 :root {
-  color-scheme: light;
-  --bg: #faf6ef;
-  --surface: #fffdf9;
-  --surface-2: #f3ebdd;
-  --ink: #2a1e16;
-  --ink-2: #5c4a3d;
-  --ink-3: #85705f;
-  --line: #e6dccb;
-  --accent: #b5431f;
-  --accent-hover: #963415;
-  --accent-ink: #fff;
-  --star: #d99a1e;
-  --shadow: 0 1px 2px rgb(42 30 22 / 0.06), 0 8px 24px rgb(42 30 22 / 0.08);
+  color-scheme: dark;
+  --bg: #141210;
+  --surface: #1d1a17;
+  --surface-2: #27221e;
+  --ink: #f6efe4;
+  --ink-2: #cfc3b3;
+  --ink-3: #9a8c7c;
+  --line: #342d27;
+  --accent: #ff6a1a;
+  --accent-hover: #ff8540;
+  --accent-ink: #141210;
+  --ember: #ffc53d;
+  --star: #ffc53d;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px rgb(0 0 0 / 0.45);
 
-  --font-serif: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --font-display: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
+  --font-serif: var(--font-display);
   --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --radius: 14px;
-  --radius-sm: 8px;
-  --max: 1120px;
+  --radius: 6px;
+  --radius-sm: 4px;
+  --max: 1160px;
   --gutter: clamp(16px, 4vw, 32px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --bg: #1b1612;
-    --surface: #241d18;
-    --surface-2: #2e2620;
-    --ink: #f3ebdd;
-    --ink-2: #d2c4b3;
-    --ink-3: #a8957f;
-    --line: #3b3029;
-    --accent: #e57c50;
-    --accent-hover: #f0956c;
-    --accent-ink: #1b1612;
-    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.3);
-  }
-}
 
 /* ---------- Base ---------- */
 *,
@@ -221,16 +207,8 @@ p {
 .brand:hover {
   color: var(--ink);
 }
-.logo-light {
+.logo-dark {
   display: none !important;
-}
-@media (prefers-color-scheme: dark) {
-  .logo-dark {
-    display: none !important;
-  }
-  .logo-light {
-    display: block !important;
-  }
 }
 .site-nav ul {
   display: flex;
@@ -936,4 +914,169 @@ textarea.input {
     padding: 0;
     margin-bottom: 16pt;
   }
+}
+
+/* =====================================================================
+   Bold backyard overrides (prototype)
+   ===================================================================== */
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+h1 {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+}
+h2 {
+  font-size: clamp(2.2rem, 4.5vw, 3rem);
+}
+h3 {
+  font-size: 1.7rem;
+}
+/* Flame-orange rule under section titles. */
+.section-head h2::after,
+.page-head h1::after {
+  content: '';
+  display: block;
+  width: 72px;
+  height: 5px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, var(--accent), var(--ember));
+  border-radius: 3px;
+}
+.eyebrow {
+  color: var(--ember);
+}
+.btn {
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  padding: 14px 22px;
+}
+.site-header {
+  background: color-mix(in srgb, #0c0a09 90%, transparent);
+  border-bottom: 3px solid var(--accent);
+}
+.site-nav a {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+}
+.site-nav a[aria-current='page'] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.hero {
+  min-height: clamp(460px, 78vh, 720px);
+}
+.hero::after {
+  background: linear-gradient(to top, rgb(12 10 9 / 0.95) 0%, rgb(12 10 9 / 0.5) 45%, rgb(12 10 9 / 0.1) 80%);
+}
+.hero h1 {
+  font-size: clamp(3.4rem, 10vw, 7.5rem);
+  max-width: 10ch;
+}
+.hero .eyebrow {
+  color: var(--ember);
+}
+
+/* Cards: title and meta overlaid on the photo. */
+.card-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 20px;
+}
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 4 / 5;
+  padding: 20px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  isolation: isolate;
+}
+.recipe-card__img {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  aspect-ratio: auto;
+  border-radius: 0;
+  z-index: -1;
+}
+.recipe-card__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(12 10 9 / 0.92) 0%, rgb(12 10 9 / 0.35) 45%, rgb(12 10 9 / 0) 70%);
+}
+.recipe-card h3 {
+  font-size: 2rem;
+  margin: 0 0 6px;
+}
+.recipe-card h3 a {
+  color: #fff;
+}
+.recipe-card:hover h3 a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.recipe-card .eyebrow {
+  align-self: flex-start;
+  padding: 4px 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: 3px;
+}
+.recipe-card .meta-inline {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.chip {
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--surface);
+}
+.chip[aria-pressed='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.recipe-hero__img {
+  border: 3px solid var(--surface-2);
+}
+.recipe-meta dd {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+.panel {
+  border-top: 4px solid var(--accent);
+}
+.section-num {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--ember);
+}
+.step-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+.news-item h2 {
+  font-size: 2.2rem;
+}
+.site-footer {
+  background: #0c0a09;
 }
