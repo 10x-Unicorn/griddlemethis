@@ -1,0 +1,140 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import PageBanner from '../../components/PageBanner.astro';
+import { isoDuration } from '../../lib/recipes';
+
+export async function getStaticPaths() {
+  const recipes = await getCollection('recipes');
+  return recipes.map((recipe) => ({ params: { slug: recipe.id }, props: { recipe } }));
+}
+
+const { recipe } = Astro.props;
+const r = recipe.data;
+const { Content } = await render(recipe);
+
+// Continue step numbering across groups (e.g. "Sauce" then "Chicken").
+const stepStarts = r.steps.map((_, i) => 1 + r.steps.slice(0, i).reduce((n, g) => n + g.items.length, 0));
+const photoSizes = '(min-width: 768px) 33vw, 100vw';
+
+const heroForSeo = await getImage({ src: r.hero, width: 1200, format: 'jpg' });
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: r.title,
+  description: r.description,
+  image: new URL(heroForSeo.src, Astro.site).href,
+  datePublished: r.published.toISOString().slice(0, 10),
+  recipeCategory: r.category,
+  keywords: r.tags.join(', '),
+  prepTime: r.prepMinutes ? isoDuration(r.prepMinutes) : undefined,
+  cookTime: r.cookMinutes ? isoDuration(r.cookMinutes) : undefined,
+  totalTime: isoDuration(r.totalMinutes),
+  recipeIngredient: r.ingredients.flatMap((g) => g.items),
+  recipeInstructions: r.steps.flatMap((g) => g.items).map((text) => ({ '@type': 'HowToStep', text })),
+};
+---
+
+<Base title={r.title} description={r.description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <PageBanner title="Recipe Details" />
+
+  <article class="recipe_details_area">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-6 col-md-6">
+          <div class="recipes_thumb">
+            <Image src={r.hero} alt={r.title} width={1200} widths={[480, 800, 1200]} sizes="(min-width: 768px) 50vw, 100vw" loading="eager" />
+          </div>
+        </div>
+        <div class="col-xl-6 col-md-6">
+          <div class="recipes_info">
+            <h1 class="h3">{r.title}</h1>
+            <p>{r.description}</p>
+            <div class="recipes_details">
+              <ul>
+                {
+                  r.rating && (
+                    <li>
+                      <p>
+                        <strong>Rating</strong> :{' '}
+                        <span aria-label={`${r.rating} out of 5`}>
+                          {Array.from({ length: r.rating }, () => <i class="fa fa-star" aria-hidden="true" />)}
+                        </span>
+                      </p>
+                    </li>
+                  )
+                }
+                {r.prepMinutes !== undefined && <li><p><strong>Prep Time</strong> : {r.prepMinutes} Mins</p></li>}
+                {r.cookMinutes !== undefined && <li><p><strong>Cook Time</strong> : {r.cookMinutes} Mins</p></li>}
+                <li><p><strong>Ready In</strong> : {r.totalMinutes} Mins</p></li>
+                <li><p><strong>Category</strong> : {r.category}</p></li>
+                {r.tags.length > 0 && <li><p><strong>Tags</strong> : {r.tags.join(', ')}</p></li>}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-top-border">
+        <h2>Planning</h2>
+        <div class="row">
+          <div class="col-md-4 recipe-photos">
+            {r.photos.plan.map((src) => <Image src={src} alt={`${r.title} ingredients`} width={800} widths={[400, 800]} sizes={photoSizes} />)}
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              {
+                r.ingredients.map((group) => (
+                  <div class="col-lg-6">
+                    {group.heading && <h3 class="h6 mb-20">{group.heading}</h3>}
+                    <ul class="recipe-list">
+                      {group.items.map((item) => <li>{item}</li>)}
+                    </ul>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+
+        <h2>Preparation</h2>
+        <div class="row">
+          <div class="col-md-4 recipe-photos">
+            {r.photos.prep.map((src) => <Image src={src} alt={`Preparing ${r.title}`} width={800} widths={[400, 800]} sizes={photoSizes} />)}
+          </div>
+          <div class="col-md-8">
+            {
+              r.steps.map((group, i) => (
+                <>
+                  {group.heading && <h3 class="h6 mb-20">{group.heading}</h3>}
+                  <ol class="recipe-list" start={stepStarts[i]}>
+                    {group.items.map((item) => <li>{item}</li>)}
+                  </ol>
+                </>
+              ))
+            }
+            {r.prepNotes.map((note) => <p class="prep-note">{note}</p>)}
+          </div>
+        </div>
+
+        <h2>Performance</h2>
+        <div class="row">
+          <div class="col-md-4 recipe-photos">
+            {r.photos.performance.map((src) => <Image src={src} alt={`${r.title} on the griddle`} width={800} widths={[400, 800]} sizes={photoSizes} />)}
+          </div>
+          <div class="col-md-8">
+            <Content />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recipe_area inc_padding">
+      <div class="single_recipe text-center">
+        <a href="/recipes/" class="boxed-btn">Return to All Recipes</a>
+      </div>
+    </div>
+  </article>
+</Base>

@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import PageBanner from '../components/PageBanner.astro';
+---
+
+<Base title="Contact" description="Send your thoughts and recipe ideas to Griddle Me This, Dad?">
+  <PageBanner title="Contact" />
+  <section class="contact-section section_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="contact-title">Get in Touch</h2>
+        </div>
+        <div class="col-lg-8">
+          <!-- Handled by Netlify Forms; submissions show up in the Netlify dashboard. -->
+          <form class="form-contact contact_form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <textarea class="form-control w-100" name="message" rows="9" required placeholder="Enter Message" aria-label="Message"></textarea>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" name="name" type="text" required placeholder="Enter your name" aria-label="Name" />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" name="email" type="email" required placeholder="Enter email address" aria-label="Email" />
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <input class="form-control" name="subject" type="text" placeholder="Enter Subject" aria-label="Subject" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <button type="submit" class="button button-contactForm btn_4 boxed-btn">Send Message</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <div class="media-body">
+              <h3><a href="mailto:griddlemethisdad@gmail.com">griddlemethisdad@gmail.com</a></h3>
+              <p>Send us your thoughts and recipe ideas anytime!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

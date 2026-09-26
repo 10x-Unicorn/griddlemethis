@@ -1,0 +1,92 @@
+/* Additions on top of the Colorlib template (public/css/style.css). */
+
+/* Page banner uses an h1 for accessibility but keeps the template's h3 look. */
+.bradcam_area h1 {
+  font-size: 50px;
+  color: #fff;
+  font-weight: 700;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .bradcam_area h1 {
+    font-size: 30px;
+  }
+}
+.bradcam_area,
+.slider_area .single_slider {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Mark the current page with the template's hover underline. */
+.header-area .main-header-area .main-menu ul li a[aria-current='page']::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Mobile menu (replaces the jQuery slicknav plugin). */
+.mobile-nav summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+  display: inline-block;
+  padding: 8px;
+}
+.mobile-nav summary::-webkit-details-marker {
+  display: none;
+}
+.mobile-nav nav {
+  position: absolute;
+  right: 15px;
+  left: 15px;
+  top: 100%;
+  z-index: 99;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+.mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+.mobile-nav a {
+  display: block;
+  padding: 10px 20px;
+  color: #1f1f1f;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Recipe detail page */
+.recipe_details_area .recipe-photos img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+.recipe_details_area .recipe-list {
+  padding-left: 1.25em;
+  margin-bottom: 20px;
+}
+.recipe_details_area .recipe-list li {
+  margin-bottom: 8px;
+  color: #727272;
+  line-height: 1.6;
+}
+.recipe_details_area .prep-note {
+  font-weight: 700;
+}
+.recipe_details_area .section-top-border h2 {
+  margin-top: 40px;
+}
+
+.newsletter-cover img {
+  width: 100%;
+  height: auto;
+}
+
+/* The template sets widths only; keep aspect ratio now that <img> has size attributes. */
+main img {
+  height: auto;
+}

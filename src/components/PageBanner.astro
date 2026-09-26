@@ -1,0 +1,18 @@
+---
+import { getImage } from 'astro:assets';
+import banner from '../../img/banner/bradcam.png';
+
+interface Props {
+  title: string;
+}
+
+const bg = await getImage({ src: banner, width: 1920, format: 'webp' });
+---
+
+<div class="bradcam_area" style={`background-image: url(${bg.src})`}>
+  <div class="container">
+    <div class="bradcam_text text-center">
+      <h1 class="h3">{Astro.props.title}</h1>
+    </div>
+  </div>
+</div>

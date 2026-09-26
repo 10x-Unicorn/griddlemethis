@@ -2,86 +2,53 @@
 A modern cookbook website dedicated to griddling.
 
 ## Infrastructure
-This site is basic HTML/CSS coding modified from this [template](https://colorlib.com/wp/template/tasty-recipes/) 
+The design is adapted from this [template](https://colorlib.com/wp/template/tasty-recipes/) 
 via [Colorlib](https://colorlib.com).
 
-### File Structure
-Helpful files/directories are as follows:
-- The original style guide can be find at `./220 Testy Recipes DOC`.
-- The `css/fonts` folders are self-explanatory 
-- The `img` folder contains two integral folders:
-  1. `blog` where all the thumbnails for the newletters are kept
-  1. `recipe` where all recipe folders are keep under `recipe_name/recipe_pics.jpg`
-- The `newsletters` folder holds all newletter pdf's
-- All web pages (.html) are found at the repository root.
+### Stack
+The site is built with [Astro](https://astro.build) and deployed on [Netlify](https://www.netlify.com/), which
+runs `npm run build` on every push and serves the `dist/` folder. The look still comes from the original Colorlib
+template (`public/css/style.css`).
 
 ```
-├── 220 Testy Recipe Docs
-├── css
-├── fonts
-├── img
-│   ├── blog
-│   │   ├── Newletter_GMTD*.png
-│   ├── recipe
-│   │   ├── */*.jpg
-├── newletters
-│   ├── GMTD Newletter *.pdf
-├── *.html
-└── README.md
+├── img/                     original photos (resized/compressed automatically at build time)
+├── public/                  files served as-is: template CSS/fonts, logos, newsletter PDFs, _redirects
+├── src/
+│   ├── content/recipes/     one Markdown file per recipe
+│   ├── content/newsletters/ one Markdown file per newsletter
+│   ├── content.config.ts    the fields every recipe/newsletter must have
+│   ├── layouts/Base.astro   header, footer, <head> (shared by every page)
+│   ├── components/          recipe card, page banner
+│   └── pages/               one file per route
+└── scripts/convert-legacy.mjs   one-off converter from the old hand-written HTML pages
 ```
 
-## Deployment
-The deployment of the site is handled via [Github](https://github.com/) and [Netlify](https://www.netlify.com/).
+### Local development
+Requires Node 22+.
 
-Github provides Internet hosting for software development and version control using Git. It offers the distributed
-version control and source code management functionality of Git, plus its own features. If you found
-this repository you are most likely already on Github.
+```
+npm install
+npm run dev      # live preview at http://localhost:4321
+npm run build    # production build into dist/
+```
 
-Netlify provides hosting for websites whose source files are stored in the version control system Git and then generated 
-into static web content files served via a 
-[Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network).
-Given the limitations of the purely static model, the company later expanded services to include content management 
-systems, and features of serverless computing to handle websites with interactive features 
-(such as email forms in our use case).
- 
 ## Contribution Guide
-### Recipes
-For contributing a recipe one must make a `repice_name.html` page. It is best to copy another webpage for formatting 
-and edit text/pictures. The basic webpage format goes as following:
+### Adding a recipe
+1. Put the photos in `img/recipe/<recipe_name>/`. Full-size phone photos are fine: the build resizes them, converts
+   them to WebP and strips location (GPS) data.
+1. Copy an existing file in `src/content/recipes/` to `src/content/recipes/<recipe-name>.md` (the filename becomes
+   the URL: `/recipes/<recipe-name>/`) and edit the fields. The text below the `---` is the "Performance" section.
+1. Run `npm run dev` to check it. If a required field is missing or a photo path is wrong, the build tells you which
+   file and field.
 
-```
-Recipe Info
-Name of recipe, description of said recipe, time to prep, cook, and be ready in.
+The recipe list, the three newest recipes on the home page and the search index all update automatically based on
+the `published` date. No circle-cropped thumbnail is needed: the card crops the photo to a circle itself. Set
+`thumbnail` only if you want a different photo on the card than the main one. Set `unlisted: true` to publish a
+recipe without listing it.
 
-Plan Section
-Picture of ingredients and ingredient list split into sections
+### Adding a newsletter
+1. Save the PDF to `public/newsletters/GMTD Newsletter <N>.pdf`.
+1. Save a cover screenshot to `img/blog/`.
+1. Copy an existing file in `src/content/newsletters/` to `<N>.md` and edit the title, date, paths and summary.
 
-Preparation Section
-Picture of prepping/griddling in action and ordered list of instructions
-
-Performance Section
-Explaination of what need to be done when griddling
-```
-
-Then you must add the recipe to `Recipes.html` again copy another recipe and replacing text/pictures.
-To obtain the circular images we use [GIMP 2.10.20](https://www.gimp.org/news/2020/06/11/gimp-2-10-20-released/) to 
-first open the file then you want to follow these steps:
-
-1. Under the `Layers` doc on the right of the screen, right click your layer and select `Add Alpha Channel`
-1. From the `Toolbox` on the left side of the screen, select the circle tool
-1. Then drag a circle over the portion of the picture you want the thumbnail to sho
-1. `Ctrl+I` to invert your selection and the `DEL` to make it so there only remains a circular image on a
- transparent background
-1. Go to `Image` on the top bar, and select `Crop to Content`
-1. Finally, export your circular image by doing `File->Export As...`
-
-The 3 most recent recipes should be added to `index.html`
-
-### Newletters
-
-We use [Canva](https://www.canva.com/) to make our newsletters
-
-To obtain the thumbnail for the newsletter, we use the Window's built-in `Snipping Tool`. On the bottom bar of Windows
-hit the magnifying glass and search `Snipping Tool`. Save this thumbnail to `img/blog/Newletter_GMTD*.png`.
-
-Download the newletter pdf via email and save to `newletters/GMTD Newletter *.pdf`
+We use [Canva](https://www.canva.com/) to make the newsletters.

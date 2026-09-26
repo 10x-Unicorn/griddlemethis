@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+interface Props {
+  recipe: CollectionEntry<'recipes'>;
+}
+
+const { recipe } = Astro.props;
+const { title, category, totalMinutes, thumbnail, hero } = recipe.data;
+---
+
+<div class="col-xl-4 col-lg-4 col-md-6">
+  <div class="single_recipe text-center">
+    <div class="recipe_thumb">
+      <Image src={thumbnail ?? hero} alt={title} width={300} height={300} fit="cover" densities={[1, 2]} />
+    </div>
+    <h3>{title}</h3>
+    <span>{category}</span>
+    <p>Time Needed: {totalMinutes} Mins</p>
+    <a href={`/recipes/${recipe.id}/`} class="line_btn">View Full Recipe</a>
+  </div>
+</div>

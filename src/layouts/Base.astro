@@ -1,0 +1,185 @@
+---
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Show the Algolia search box in the header. */
+  search?: boolean;
+}
+
+const { title, description = 'Griddle Me This, Dad? A cookbook dedicated to griddling.', search = false } = Astro.props;
+const fullTitle = title === 'Home' ? 'Griddle Me This, Dad?' : `${title} | Griddle Me This, Dad?`;
+const nav = [
+  ['/', 'Home'],
+  ['/about/', 'About'],
+  ['/recipes/', 'Recipes'],
+  ['/newsletters/', 'Newsletters'],
+  ['/contact/', 'Contact'],
+];
+const current = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? current === '/' : current.startsWith(href));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" type="image/png" href="/gmt_logo.png" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/themify-icons.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    {
+      search && (
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
+        />
+      )
+    }
+    <slot name="head" />
+  </head>
+  <body>
+    <header>
+      <div class="header-area">
+        <div id="sticky-header" class="main-header-area">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-xl-3 col-lg-2 col-8">
+                <div class="logo">
+                  <a href="/"><img src="/gmt_logo.png" alt="Griddle Me This, Dad? home" /></a>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-7 d-none d-lg-block">
+                <div class="main-menu white_text">
+                  <nav aria-label="Main">
+                    <ul id="navigation">
+                      {
+                        nav.map(([href, label]) => (
+                          <li>
+                            <a href={href} aria-current={isActive(href) ? 'page' : undefined}>
+                              {label}
+                            </a>
+                          </li>
+                        ))
+                      }
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              {
+                search && (
+                  <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                    <div class="search_icon">
+                      <div id="search" />
+                    </div>
+                  </div>
+                )
+              }
+              <div class="col-4 d-lg-none text-right">
+                <details class="mobile-nav">
+                  <summary aria-label="Menu"><i class="ti-menu"></i></summary>
+                  <nav aria-label="Mobile">
+                    <ul>
+                      {
+                        nav.map(([href, label]) => (
+                          <li>
+                            <a href={href}>{label}</a>
+                          </li>
+                        ))
+                      }
+                    </ul>
+                  </nav>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="footer_top">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-2 col-md-6 col-lg-2">
+              <div class="footer_widget">
+                <h3 class="footer_title">Explore</h3>
+                <ul>
+                  {
+                    nav.map(([href, label]) => (
+                      <li>
+                        <a href={href}>{label}</a>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-6 col-lg-2">
+              <div class="footer_widget">
+                <h3 class="footer_title">Follow</h3>
+                <ul>
+                  <li><a href="https://www.pinterest.com/williampickrel/">Pinterest</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-4">
+              <div class="footer_widget">
+                <h3 class="footer_title">Subscribe</h3>
+                <p class="newsletter_text">Sign up to get an email notification for when we post new recipes!</p>
+                <form class="newsletter_form" name="email_subscriber" method="POST" data-netlify="true">
+                  <input
+                    name="emailSub"
+                    type="email"
+                    required
+                    placeholder="Enter your email"
+                    aria-label="Email address"
+                  />
+                  <button type="submit" aria-label="Subscribe"><i class="ti-arrow-right"></i></button>
+                </form>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-4">
+              <div class="footer_widget">
+                <div class="footer_logo">
+                  <a href="https://github.com/10x-Unicorn"><img src="/10xU_small.png" alt="10xUnicorn" /></a>
+                </div>
+                <p class="newsletter_text_uni">Created and designed by 10xUnicorn.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copy-right_text">
+        <div class="container">
+          <div class="footer_border"></div>
+          <p class="copy_right">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;{new Date().getFullYear()} All rights reserved | Template via
+            <a href="https://colorlib.com" target="_blank" rel="noopener">Colorlib</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.getElementById('sticky-header');
+      const onScroll = () => header?.classList.toggle('sticky', window.scrollY > 0);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    </script>
+    <slot name="scripts" />
+  </body>
+</html>

@@ -1,0 +1,31 @@
+---
+import { getImage } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import RecipeCard from '../components/RecipeCard.astro';
+import { getListedRecipes } from '../lib/recipes';
+import heroImg from '../../img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_preparation.jpg';
+
+const latest = (await getListedRecipes()).slice(0, 3);
+const hero = await getImage({ src: heroImg, width: 1920, format: 'webp' });
+---
+
+<Base title="Home">
+  <div class="slider_area">
+    <div class="single_slider d-flex align-items-center" style={`background-image: url(${hero.src})`}>
+      <div class="container">
+        <div class="slider_text text-center">
+          <h3>Griddle Me This, Dad?</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe_area">
+    <div class="container">
+      <h1>Most Recent Recipes</h1>
+      <div class="row">
+        {latest.map((recipe) => <RecipeCard recipe={recipe} />)}
+      </div>
+    </div>
+  </div>
+</Base>

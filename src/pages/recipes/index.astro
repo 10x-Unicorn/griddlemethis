@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageBanner from '../../components/PageBanner.astro';
+import RecipeCard from '../../components/RecipeCard.astro';
+import { getListedRecipes } from '../../lib/recipes';
+
+const recipes = await getListedRecipes();
+---
+
+<Base title="Recipes" description="Every Griddle Me This, Dad? recipe, newest first." search>
+  <PageBanner title="Recipes" />
+  <div class="recipe_area plus_padding">
+    <div class="container">
+      <div class="row">
+        {recipes.map((recipe) => <RecipeCard recipe={recipe} />)}
+      </div>
+    </div>
+  </div>
+
+  <Fragment slot="scripts">
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
+    ></script>
+    <script is:inline>
+      // Search-only key: safe to be public.
+      algoliasearchNetlify({
+        appId: 'LLTKHZS2TV',
+        apiKey: '97ff05dd6aea70a35ff51f32ac961f39',
+        siteId: 'aeb1191c-4732-40fe-b19e-a143826a255c',
+        branch: 'master',
+        selector: 'div#search',
+      });
+    </script>
+  </Fragment>
+</Base>
