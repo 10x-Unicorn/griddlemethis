@@ -2,8 +2,7 @@
 import '../styles/site.css';
 import { Image } from 'astro:assets';
 import Icon from '../components/Icon.astro';
-import logoDark from '../assets/logo-dark.png';
-import logoLight from '../assets/logo-light.png';
+import logo from '../assets/logo.png';
 
 interface Props {
   title: string;
@@ -49,8 +48,7 @@ const current = Astro.url.pathname;
     <header class="site-header">
       <div class="container">
         <a class="brand" href="/" aria-label="Griddle Me This, Dad? home">
-          <Image class="logo-dark" src={logoDark} alt="" height={112} loading="eager" />
-          <Image class="logo-light" src={logoLight} alt="" height={112} loading="eager" />
+          <Image src={logo} alt="" height={128} loading="eager" />
         </a>
         <nav class="site-nav" aria-label="Main">
           <ul>

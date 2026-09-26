@@ -5,7 +5,7 @@ A modern cookbook website dedicated to griddling.
 ### Stack
 The site is built with [Astro](https://astro.build) and deployed on [Netlify](https://www.netlify.com/), which
 runs `npm run build` on every push and serves the `dist/` folder. All styling lives in `src/styles/site.css`
-(colors and fonts are defined as variables at the top, with a matching dark mode).
+(the dark charcoal-and-flame palette and the fonts are defined as variables at the top).
 
 ```
 ├── img/                     original photos (resized/compressed automatically at build time)
@@ -15,7 +15,7 @@ runs `npm run build` on every push and serves the `dist/` folder. All styling li
 │   ├── content/newsletters/ one Markdown file per newsletter
 │   ├── content.config.ts    the fields every recipe/newsletter must have
 │   ├── layouts/Base.astro   header, footer, <head> (shared by every page)
-│   ├── assets/              logo (dark and light versions)
+│   ├── assets/              logo
 │   ├── components/          recipe card, page header, icons
 │   └── pages/               one file per route
 ```
