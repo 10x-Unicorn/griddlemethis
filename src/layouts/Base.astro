@@ -2,6 +2,7 @@
 import '../styles/site.css';
 import { Image } from 'astro:assets';
 import Icon from '../components/Icon.astro';
+import SiteSearch from '../components/SiteSearch.astro';
 import { EMAIL_HINT, EMAIL_PATTERN } from '../lib/forms';
 import logo from '../assets/logo.png';
 import unicornLogo from '../assets/10xunicorn.png';
@@ -9,9 +10,15 @@ import unicornLogo from '../assets/10xunicorn.png';
 interface Props {
   title: string;
   description?: string;
+  /** Show the search box in the header (the recipe list has its own). */
+  headerSearch?: boolean;
 }
 
-const { title, description = 'Griddle Me This, Dad? Recipes from the backyard griddle.' } = Astro.props;
+const {
+  title,
+  description = 'Griddle Me This, Dad? Recipes from the backyard griddle.',
+  headerSearch = true,
+} = Astro.props;
 const fullTitle = title === 'Home' ? 'Griddle Me This, Dad?' : `${title} | Griddle Me This, Dad?`;
 const nav = [
   ['/recipes/', 'Recipes'],
@@ -57,22 +64,25 @@ const current = Astro.url.pathname;
             }
           </ul>
         </nav>
-        <details class="mobile-nav">
-          <summary aria-label="Menu">
-            <span class="icon-menu"><Icon name="menu" size={26} /></span>
-            <span class="icon-close"><Icon name="close" size={26} /></span>
-          </summary>
-          <ul>
-            <li><a href="/">Home</a></li>
-            {
-              nav.map(([href, label]) => (
-                <li>
-                  <a href={href}>{label}</a>
-                </li>
-              ))
-            }
-          </ul>
-        </details>
+        <div class="header-actions">
+          {headerSearch && <SiteSearch />}
+          <details class="mobile-nav">
+            <summary aria-label="Menu">
+              <span class="icon-menu"><Icon name="menu" size={26} /></span>
+              <span class="icon-close"><Icon name="close" size={26} /></span>
+            </summary>
+            <ul>
+              <li><a href="/">Home</a></li>
+              {
+                nav.map(([href, label]) => (
+                  <li>
+                    <a href={href}>{label}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </details>
+        </div>
       </div>
     </header>
 

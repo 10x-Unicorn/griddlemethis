@@ -16,3 +16,14 @@ export const queryWords = (query: string) =>
     .split(' ')
     .filter(Boolean)
     .map((word) => (word.length > 3 ? word.replace(/(es|s)$/, '') : word));
+
+/** One recipe in /search.json, used by the header search's results preview. */
+export type SearchItem = {
+  title: string;
+  url: string;
+  category: string;
+  time: string;
+  thumb: string;
+  /** normalize()d text to match against (see lib/recipes searchText). */
+  text: string;
+};
