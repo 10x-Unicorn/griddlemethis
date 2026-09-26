@@ -71,6 +71,9 @@ const categories = [...counts].sort((a, b) => b[1] - a[1]);
         siteId: 'aeb1191c-4732-40fe-b19e-a143826a255c',
         branch: 'master',
         selector: 'div#search',
+        placeholder: 'Search recipes…',
+        // Show results in a dropdown on phones too, instead of a full-screen overlay.
+        detached: false,
       });
     </script>
   </Fragment>
