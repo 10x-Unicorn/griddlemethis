@@ -8,8 +8,7 @@ import { getListedRecipes } from '../lib/recipes';
 import heroImg from '../../img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_preparation.jpg';
 import famPic from '../../img/fam_pic.jpg';
 
-const recipes = await getListedRecipes();
-const latest = recipes.slice(0, 3);
+const latest = (await getListedRecipes()).slice(0, 3);
 const [newsletter] = (await getCollection('newsletters')).sort(
   (a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
 );
@@ -27,9 +26,7 @@ const [newsletter] = (await getCollection('newsletters')).sort(
       fetchpriority="high"
     />
     <div class="container">
-      <p class="eyebrow">{recipes.length} recipes and counting</p>
       <h1>Griddle Me This, Dad?</h1>
-      <p>Tried-and-true recipes from the backyard griddle — breakfast to dinner, planned, prepped and performed.</p>
       <a class="btn" href="/recipes/">Browse recipes <Icon name="arrow" /></a>
     </div>
   </section>
