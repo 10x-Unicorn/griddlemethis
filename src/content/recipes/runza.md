@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 15
 totalMinutes: 20
 hero: "../../../img/recipe/runza/runza_fin.JPG"
-thumbnail: "../../../img/recipe/runza/runza_cir.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

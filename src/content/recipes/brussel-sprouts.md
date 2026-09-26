@@ -9,7 +9,6 @@ prepMinutes: 9
 cookMinutes: 6
 totalMinutes: 15
 hero: "../../../img/recipe/brussel_sprouts/bacon_brussel_fin.jpg"
-thumbnail: "../../../img/recipe/brussel_sprouts/bacon_brussel_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

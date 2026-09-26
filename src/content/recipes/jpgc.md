@@ -9,7 +9,6 @@ prepMinutes: 20
 cookMinutes: 20
 totalMinutes: 40
 hero: "../../../img/recipe/JPGC/jpgc_fin.JPG"
-thumbnail: "../../../img/recipe/JPGC/jpgc_cir.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 15
 totalMinutes: 20
 hero: "../../../img/recipe/tavern_sandwich/tavern_sandwich_fin.JPEG"
-thumbnail: "../../../img/recipe/tavern_sandwich/tavern_sandwich_cir.JPEG"
 ingredients:
   - heading: "Ingredients"
     items:

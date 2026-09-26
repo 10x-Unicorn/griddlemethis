@@ -1,23 +1,64 @@
 ---
 import Base from '../../layouts/Base.astro';
-import PageBanner from '../../components/PageBanner.astro';
+import PageHead from '../../components/PageHead.astro';
 import RecipeCard from '../../components/RecipeCard.astro';
 import { getListedRecipes } from '../../lib/recipes';
 
 const recipes = await getListedRecipes();
+
+// Categories, most recipes first.
+const counts = new Map<string, number>();
+for (const r of recipes) counts.set(r.data.category, (counts.get(r.data.category) ?? 0) + 1);
+const categories = [...counts].sort((a, b) => b[1] - a[1]);
 ---
 
 <Base title="Recipes" description="Every Griddle Me This, Dad? recipe, newest first." search>
-  <PageBanner title="Recipes" />
-  <div class="recipe_area plus_padding">
-    <div class="container">
-      <div class="row">
-        {recipes.map((recipe) => <RecipeCard recipe={recipe} />)}
+  <PageHead title="Recipes" eyebrow="The cookbook">
+    <p class="lede">Every recipe we’ve cooked on the griddle, newest first.</p>
+  </PageHead>
+
+  <div class="container">
+    <div class="toolbar">
+      <div class="chips" role="group" aria-label="Filter by category" data-filters hidden>
+        <button class="chip" type="button" data-filter="" aria-pressed="true">
+          All<span class="count">{recipes.length}</span>
+        </button>
+        {
+          categories.map(([name, n]) => (
+            <button class="chip" type="button" data-filter={name} aria-pressed="false">
+              {name}
+              <span class="count">{n}</span>
+            </button>
+          ))
+        }
       </div>
+      <div id="search"></div>
     </div>
+
+    <ul class="card-grid" data-recipes style="padding-bottom: clamp(48px, 8vw, 88px)">
+      {recipes.map((recipe, i) => <RecipeCard recipe={recipe} eager={i < 3} />)}
+    </ul>
   </div>
 
   <Fragment slot="scripts">
+    <script>
+      // Category filter chips (progressive enhancement: without JS, all recipes show).
+      const group = document.querySelector<HTMLElement>('[data-filters]');
+      const cards = document.querySelectorAll<HTMLElement>('[data-recipes] > li');
+      if (group) {
+        const buttons = group.querySelectorAll<HTMLButtonElement>('[data-filter]');
+        const apply = (category: string) => {
+          buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === category)));
+          cards.forEach((c) => (c.hidden = !!category && c.dataset.category !== category));
+          history.replaceState(null, '', category ? `#${encodeURIComponent(category.toLowerCase())}` : location.pathname);
+        };
+        buttons.forEach((b) => b.addEventListener('click', () => apply(b.dataset.filter ?? '')));
+        const fromHash = decodeURIComponent(location.hash.slice(1));
+        const match = [...buttons].find((b) => b.dataset.filter?.toLowerCase() === fromHash);
+        if (match) apply(match.dataset.filter ?? '');
+        group.hidden = false;
+      }
+    </script>
     <script
       is:inline
       src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"

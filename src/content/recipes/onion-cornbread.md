@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 10
 totalMinutes: 15
 hero: "../../../img/recipe/onion_cornbread/Onion_Cornbread_Fin.JPG"
-thumbnail: "../../../img/recipe/onion_cornbread/Onion_Cornbread_Circ.JPG"
 ingredients:
   - heading: "Onion Cornbread"
     items:

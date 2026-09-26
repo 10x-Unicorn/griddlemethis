@@ -9,7 +9,6 @@ prepMinutes: 30
 cookMinutes: 10
 totalMinutes: 40
 hero: "../../../img/recipe/mongolian_beef/mongolian_beef_fin2.jpg"
-thumbnail: "../../../img/recipe/mongolian_beef/mongolian_beef_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

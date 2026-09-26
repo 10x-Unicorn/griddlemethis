@@ -9,7 +9,6 @@ prepMinutes: 10
 cookMinutes: 20
 totalMinutes: 30
 hero: "../../../img/recipe/Chana_Masala/chana_masala_fin.JPG"
-thumbnail: "../../../img/recipe/Chana_Masala/chana_masala_cir.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

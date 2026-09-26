@@ -9,7 +9,6 @@ prepMinutes: 15
 cookMinutes: 30
 totalMinutes: 45
 hero: "../../../img/recipe/potato_soup/potato_soup_fin.JPG"
-thumbnail: "../../../img/recipe/potato_soup/potato_soup_cir.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

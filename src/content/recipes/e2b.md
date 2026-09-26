@@ -9,7 +9,6 @@ prepMinutes: 3
 cookMinutes: 12
 totalMinutes: 15
 hero: "../../../img/recipe/E2B/E2BFin.jpg"
-thumbnail: "../../../img/recipe/E2B/E2BFinCirc.jpg"
 ingredients:
   - heading: "Ingredients:"
     items:

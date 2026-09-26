@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 10
 totalMinutes: 15
 hero: "../../../img/recipe/Summer_Squash_Sauté/sss_fin.JPG"
-thumbnail: "../../../img/recipe/Summer_Squash_Sauté/sss_fin_cir.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

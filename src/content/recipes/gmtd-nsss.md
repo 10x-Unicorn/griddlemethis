@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 0
 totalMinutes: 5
 hero: "../../../img/recipe/GMTD_NSSS/NSSS_plan.jpg"
-thumbnail: "../../../img/recipe/GMTD_NSSS/NSSS_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

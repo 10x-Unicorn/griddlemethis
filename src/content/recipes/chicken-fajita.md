@@ -9,7 +9,6 @@ prepMinutes: 20
 cookMinutes: 12
 totalMinutes: 35
 hero: "../../../img/recipe/Chicken_Fajita/chicken_fajita_fin.jpg"
-thumbnail: "../../../img/recipe/Chicken_Fajita/chicken_fajita_cir_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

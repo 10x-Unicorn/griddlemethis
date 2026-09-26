@@ -14,3 +14,10 @@ export function isoDuration(minutes: number) {
   const m = minutes % 60;
   return `PT${h ? `${h}H` : ''}${m || !h ? `${m}M` : ''}`;
 }
+
+/** 75 -> "1 hr 15 min", 20 -> "20 min". */
+export function formatMinutes(minutes: number) {
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  return [h && `${h} hr`, (m || !h) && `${m} min`].filter(Boolean).join(' ');
+}

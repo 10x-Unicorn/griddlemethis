@@ -23,8 +23,6 @@ const recipes = defineCollection({
       // Reachable by URL but left off listings (e.g. not ready yet).
       unlisted: z.boolean().default(false),
       hero: image(),
-      // Square crop for cards; falls back to the hero image.
-      thumbnail: image().optional(),
       ingredients: z.array(group).min(1),
       steps: z.array(group).min(1),
       prepNotes: z.array(z.string()).default([]),

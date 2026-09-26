@@ -9,7 +9,6 @@ prepMinutes: 10
 cookMinutes: 16
 totalMinutes: 26
 hero: "../../../img/recipe/chicken_schnitzel/schintzel_fin.jpg"
-thumbnail: "../../../img/recipe/potato_patties/potato_patties_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

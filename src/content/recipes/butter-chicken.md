@@ -9,7 +9,6 @@ prepMinutes: 30
 cookMinutes: 25
 totalMinutes: 55
 hero: "../../../img/recipe/Butter_Chicken/butter_chicken_fin.JPG"
-thumbnail: "../../../img/recipe/Butter_Chicken/butter_chicken_cir.JPG"
 ingredients:
   - heading: "Marinade"
     items:

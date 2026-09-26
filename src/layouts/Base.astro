@@ -1,24 +1,26 @@
 ---
 import '../styles/site.css';
+import { Image } from 'astro:assets';
+import Icon from '../components/Icon.astro';
+import logoDark from '../assets/logo-dark.png';
+import logoLight from '../assets/logo-light.png';
 
 interface Props {
   title: string;
   description?: string;
-  /** Show the Algolia search box in the header. */
+  /** Show the Algolia search stylesheet (the box itself is placed by the page). */
   search?: boolean;
 }
 
-const { title, description = 'Griddle Me This, Dad? A cookbook dedicated to griddling.', search = false } = Astro.props;
+const { title, description = 'Griddle Me This, Dad? Recipes from the backyard griddle.', search = false } = Astro.props;
 const fullTitle = title === 'Home' ? 'Griddle Me This, Dad?' : `${title} | Griddle Me This, Dad?`;
 const nav = [
-  ['/', 'Home'],
-  ['/about/', 'About'],
   ['/recipes/', 'Recipes'],
   ['/newsletters/', 'Newsletters'],
+  ['/about/', 'About'],
   ['/contact/', 'Contact'],
 ];
 const current = Astro.url.pathname;
-const isActive = (href: string) => (href === '/' ? current === '/' : current.startsWith(href));
 ---
 
 <!doctype html>
@@ -31,11 +33,9 @@ const isActive = (href: string) => (href === '/' ? current === '/' : current.sta
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <link rel="icon" type="image/png" href="/gmt_logo.png" />
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/css/themify-icons.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <meta name="theme-color" content="#faf6ef" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1b1612" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     {
       search && (
         <link
@@ -47,61 +47,41 @@ const isActive = (href: string) => (href === '/' ? current === '/' : current.sta
     <slot name="head" />
   </head>
   <body>
-    <header>
-      <div class="header-area">
-        <div id="sticky-header" class="main-header-area">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-xl-3 col-lg-2 col-8">
-                <div class="logo">
-                  <a href="/"><img src="/gmt_logo.png" alt="Griddle Me This, Dad? home" /></a>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-7 d-none d-lg-block">
-                <div class="main-menu white_text">
-                  <nav aria-label="Main">
-                    <ul id="navigation">
-                      {
-                        nav.map(([href, label]) => (
-                          <li>
-                            <a href={href} aria-current={isActive(href) ? 'page' : undefined}>
-                              {label}
-                            </a>
-                          </li>
-                        ))
-                      }
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-              {
-                search && (
-                  <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                    <div class="search_icon">
-                      <div id="search" />
-                    </div>
-                  </div>
-                )
-              }
-              <div class="col-4 d-lg-none text-right">
-                <details class="mobile-nav">
-                  <summary aria-label="Menu"><i class="ti-menu"></i></summary>
-                  <nav aria-label="Mobile">
-                    <ul>
-                      {
-                        nav.map(([href, label]) => (
-                          <li>
-                            <a href={href}>{label}</a>
-                          </li>
-                        ))
-                      }
-                    </ul>
-                  </nav>
-                </details>
-              </div>
-            </div>
-          </div>
-        </div>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="/" aria-label="Griddle Me This, Dad? home">
+          <Image class="logo-dark" src={logoDark} alt="" height={112} loading="eager" />
+          <Image class="logo-light" src={logoLight} alt="" height={112} loading="eager" />
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <ul>
+            {
+              nav.map(([href, label]) => (
+                <li>
+                  <a href={href} aria-current={current.startsWith(href) ? 'page' : undefined}>
+                    {label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        <details class="mobile-nav">
+          <summary aria-label="Menu">
+            <span class="icon-menu"><Icon name="menu" size={26} /></span>
+            <span class="icon-close"><Icon name="close" size={26} /></span>
+          </summary>
+          <ul>
+            <li><a href="/">Home</a></li>
+            {
+              nav.map(([href, label]) => (
+                <li>
+                  <a href={href}>{label}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </details>
       </div>
     </header>
 
@@ -109,77 +89,48 @@ const isActive = (href: string) => (href === '/' ? current === '/' : current.sta
       <slot />
     </main>
 
-    <footer class="footer">
-      <div class="footer_top">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-2 col-md-6 col-lg-2">
-              <div class="footer_widget">
-                <h3 class="footer_title">Explore</h3>
-                <ul>
-                  {
-                    nav.map(([href, label]) => (
-                      <li>
-                        <a href={href}>{label}</a>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-2 col-md-6 col-lg-2">
-              <div class="footer_widget">
-                <h3 class="footer_title">Follow</h3>
-                <ul>
-                  <li><a href="https://www.pinterest.com/williampickrel/">Pinterest</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-4 col-md-6 col-lg-4">
-              <div class="footer_widget">
-                <h3 class="footer_title">Subscribe</h3>
-                <p class="newsletter_text">Sign up to get an email notification for when we post new recipes!</p>
-                <form class="newsletter_form" name="email_subscriber" method="POST" data-netlify="true">
-                  <input
-                    name="emailSub"
-                    type="email"
-                    required
-                    placeholder="Enter your email"
-                    aria-label="Email address"
-                  />
-                  <button type="submit" aria-label="Subscribe"><i class="ti-arrow-right"></i></button>
-                </form>
-              </div>
-            </div>
-            <div class="col-xl-4 col-md-6 col-lg-4">
-              <div class="footer_widget">
-                <div class="footer_logo">
-                  <a href="https://github.com/10x-Unicorn"><img src="/10xU_small.png" alt="10xUnicorn" /></a>
-                </div>
-                <p class="newsletter_text_uni">Created and designed by 10xUnicorn.</p>
-              </div>
-            </div>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h2>Griddle Me This, Dad?</h2>
+            <p>Recipes, tips and monthly newsletters from a dad who took his cooking out to the backyard griddle.</p>
+            <ul>
+              <li><a href="https://www.pinterest.com/williampickrel/">Pinterest</a></li>
+              <li><a href="mailto:griddlemethisdad@gmail.com">griddlemethisdad@gmail.com</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Explore</h2>
+            <ul>
+              <li><a href="/">Home</a></li>
+              {
+                nav.map(([href, label]) => (
+                  <li>
+                    <a href={href}>{label}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div>
+            <h2>Get new recipes by email</h2>
+            <p>We’ll let you know when a new recipe goes up.</p>
+            <form class="subscribe" name="email_subscriber" method="POST" data-netlify="true">
+              <label class="visually-hidden" for="emailSub">Email address</label>
+              <input class="input" id="emailSub" name="emailSub" type="email" required placeholder="you@example.com" />
+              <button class="btn" type="submit">Subscribe</button>
+            </form>
           </div>
         </div>
-      </div>
-      <div class="copy-right_text">
-        <div class="container">
-          <div class="footer_border"></div>
-          <p class="copy_right">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;{new Date().getFullYear()} All rights reserved | Template via
-            <a href="https://colorlib.com" target="_blank" rel="noopener">Colorlib</a>
-          </p>
+        <div class="footer-bottom">
+          <span>© {new Date().getFullYear()} Griddle Me This, Dad?</span>
+          <span>Site by <a href="https://github.com/10x-Unicorn">10xUnicorn</a></span>
         </div>
       </div>
     </footer>
 
-    <script>
-      const header = document.getElementById('sticky-header');
-      const onScroll = () => header?.classList.toggle('sticky', window.scrollY > 0);
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    </script>
     <slot name="scripts" />
   </body>
 </html>
+

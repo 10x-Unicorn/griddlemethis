@@ -2,23 +2,21 @@
 A modern cookbook website dedicated to griddling.
 
 ## Infrastructure
-The design is adapted from this [template](https://colorlib.com/wp/template/tasty-recipes/) 
-via [Colorlib](https://colorlib.com).
-
 ### Stack
 The site is built with [Astro](https://astro.build) and deployed on [Netlify](https://www.netlify.com/), which
-runs `npm run build` on every push and serves the `dist/` folder. The look still comes from the original Colorlib
-template (`public/css/style.css`).
+runs `npm run build` on every push and serves the `dist/` folder. All styling lives in `src/styles/site.css`
+(colors and fonts are defined as variables at the top, with a matching dark mode).
 
 ```
 ├── img/                     original photos (resized/compressed automatically at build time)
-├── public/                  files served as-is: template CSS/fonts, logos, newsletter PDFs, _redirects
+├── public/                  files served as-is: favicon, newsletter PDFs, _redirects
 ├── src/
 │   ├── content/recipes/     one Markdown file per recipe
 │   ├── content/newsletters/ one Markdown file per newsletter
 │   ├── content.config.ts    the fields every recipe/newsletter must have
 │   ├── layouts/Base.astro   header, footer, <head> (shared by every page)
-│   ├── components/          recipe card, page banner
+│   ├── assets/              logo (dark and light versions)
+│   ├── components/          recipe card, page header, icons
 │   └── pages/               one file per route
 ```
 
@@ -41,9 +39,9 @@ npm run build    # production build into dist/
    file and field.
 
 The recipe list, the three newest recipes on the home page and the search index all update automatically based on
-the `published` date. No circle-cropped thumbnail is needed: the card crops the photo to a circle itself. Set
-`thumbnail` only if you want a different photo on the card than the main one. Set `unlisted: true` to publish a
-recipe without listing it.
+the `published` date. The `hero` photo is used everywhere the recipe appears (cards, the recipe page, search
+results), cropped automatically, so no separate thumbnail is needed. Set `unlisted: true` to publish a recipe
+without listing it.
 
 ### Adding a newsletter
 1. Save the PDF to `public/newsletters/GMTD Newsletter <N>.pdf`.

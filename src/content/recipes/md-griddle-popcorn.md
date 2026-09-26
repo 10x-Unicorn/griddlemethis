@@ -9,7 +9,6 @@ prepMinutes: 1
 cookMinutes: 4
 totalMinutes: 5
 hero: "../../../img/recipe/MD_griddle _popcorn/MD_popcorn_fin.jpg"
-thumbnail: "../../../img/recipe/MD_griddle _popcorn/MD_popcorn_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

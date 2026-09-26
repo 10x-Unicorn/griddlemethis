@@ -9,7 +9,6 @@ prepMinutes: 18
 cookMinutes: 12
 totalMinutes: 30
 hero: "../../../img/recipe/Boardwalk_Fries/boardwalk_fries_fin.JPG"
-thumbnail: "../../../img/recipe/Boardwalk_Fries/boardwalk_fries_cir.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

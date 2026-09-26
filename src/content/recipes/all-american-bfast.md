@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 15
 totalMinutes: 20
 hero: "../../../img/recipe/All_American_Bfast/AAB_fin.jpg"
-thumbnail: "../../../img/recipe/All_American_Bfast/AAB_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

@@ -9,7 +9,6 @@ prepMinutes: 20
 cookMinutes: 20
 totalMinutes: 40
 hero: "../../../img/recipe/croque_madame/croque_fin.jpg"
-thumbnail: "../../../img/recipe/croque_madame/croque_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

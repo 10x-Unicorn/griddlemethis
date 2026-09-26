@@ -9,7 +9,6 @@ prepMinutes: 90
 cookMinutes: 30
 totalMinutes: 120
 hero: "../../../img/recipe/griddle_eggplant_parmesan/eggplant_parm_fin.jpg"
-thumbnail: "../../../img/recipe/griddle_eggplant_parmesan/eggplant_parm_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

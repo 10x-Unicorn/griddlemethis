@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 15
 totalMinutes: 20
 hero: "../../../img/recipe/cheesy_breakfast_tacos/cheesy_breakfast_taco_fin.JPG"
-thumbnail: "../../../img/recipe/cheesy_breakfast_tacos/cheesy_breakfast_taco_cir.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

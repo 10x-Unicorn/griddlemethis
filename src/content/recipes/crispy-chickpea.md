@@ -9,7 +9,6 @@ prepMinutes: 2
 cookMinutes: 6
 totalMinutes: 8
 hero: "../../../img/recipe/chickpea_snack/chickpea_fin.jpg"
-thumbnail: "../../../img/recipe/chickpea_snack/chickpea_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

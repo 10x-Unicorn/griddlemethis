@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 0
 totalMinutes: 5
 hero: "../../../img/recipe/Fajita_Spice/Fin.jpg"
-thumbnail: "../../../img/recipe/Fajita_Spice/Fin-cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

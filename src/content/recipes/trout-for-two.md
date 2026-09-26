@@ -9,7 +9,6 @@ prepMinutes: 30
 cookMinutes: 10
 totalMinutes: 40
 hero: "../../../img/recipe/trout_for_two/trout_fin.JPG"
-thumbnail: "../../../img/recipe/trout_for_two/trout_cir.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

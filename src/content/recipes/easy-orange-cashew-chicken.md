@@ -9,7 +9,6 @@ prepMinutes: 10
 cookMinutes: 12
 totalMinutes: 27
 hero: "../../../img/recipe/easy_orange_cashew_chicken/IMG_0237.jpg"
-thumbnail: "../../../img/recipe/easy_orange_cashew_chicken/easy_orange_chicken_cic.png"
 ingredients:
   - heading: "Ingredients:"
     items:

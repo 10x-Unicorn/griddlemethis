@@ -9,7 +9,6 @@ prepMinutes: 2
 cookMinutes: 8
 totalMinutes: 10
 hero: "../../../img/recipe/sweet_potato_hash/potato_hash_fin.JPG"
-thumbnail: "../../../img/recipe/sweet_potato_hash/potato_hash_cir.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

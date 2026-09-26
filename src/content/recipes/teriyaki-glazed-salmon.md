@@ -9,7 +9,6 @@ prepMinutes: 35
 cookMinutes: 10
 totalMinutes: 45
 hero: "../../../img/recipe/teriyaki_glazed_salmon/Salmon_Final.JPG"
-thumbnail: "../../../img/recipe/teriyaki_glazed_salmon/Salmon_Circ.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

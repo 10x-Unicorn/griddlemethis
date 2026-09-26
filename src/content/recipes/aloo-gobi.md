@@ -9,7 +9,6 @@ prepMinutes: 15
 cookMinutes: 20
 totalMinutes: 35
 hero: "../../../img/recipe/Aloo_Gobi/aloo_gobi_fin.JPG"
-thumbnail: "../../../img/recipe/Aloo_Gobi/aloo_gobi_cir.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

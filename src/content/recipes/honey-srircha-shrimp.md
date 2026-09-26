@@ -9,7 +9,6 @@ prepMinutes: 7
 cookMinutes: 8
 totalMinutes: 15
 hero: "../../../img/recipe/Honey_Sriracha_Shrimp/honey_sriracha_shrimp_fin.JPEG"
-thumbnail: "../../../img/recipe/Honey_Sriracha_Shrimp/honey_sriracha_shrimp_cir.JPEG"
 ingredients:
   - heading: "Ingredients"
     items:

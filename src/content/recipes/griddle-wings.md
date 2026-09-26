@@ -9,7 +9,6 @@ prepMinutes: 18
 cookMinutes: 22
 totalMinutes: 40
 hero: "../../../img/recipe/Griddle_Wings/griddle_wings_fin.JPEG"
-thumbnail: "../../../img/recipe/Griddle_Wings/griddle_wings_cir.JPEG"
 ingredients:
   - heading: "Ingredients"
     items:

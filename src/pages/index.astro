@@ -1,31 +1,78 @@
 ---
-import { getImage } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import RecipeCard from '../components/RecipeCard.astro';
+import Icon from '../components/Icon.astro';
 import { getListedRecipes } from '../lib/recipes';
 import heroImg from '../../img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_preparation.jpg';
+import famPic from '../../img/fam_pic.jpg';
 
-const latest = (await getListedRecipes()).slice(0, 3);
-const hero = await getImage({ src: heroImg, width: 1920, format: 'webp' });
+const recipes = await getListedRecipes();
+const latest = recipes.slice(0, 3);
+const [newsletter] = (await getCollection('newsletters')).sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
+);
 ---
 
 <Base title="Home">
-  <div class="slider_area">
-    <div class="single_slider d-flex align-items-center" style={`background-image: url(${hero.src})`}>
-      <div class="container">
-        <div class="slider_text text-center">
-          <h3>Griddle Me This, Dad?</h3>
+  <section class="hero">
+    <Image
+      src={heroImg}
+      alt="Pancakes cooking on the griddle"
+      widths={[640, 1024, 1600, 2000]}
+      width={2000}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="container">
+      <p class="eyebrow">{recipes.length} recipes and counting</p>
+      <h1>Griddle Me This, Dad?</h1>
+      <p>Tried-and-true recipes from the backyard griddle — breakfast to dinner, planned, prepped and performed.</p>
+      <a class="btn" href="/recipes/">Browse recipes <Icon name="arrow" /></a>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-head">
+      <h2>Latest recipes</h2>
+      <a class="link-arrow" href="/recipes/">All recipes <Icon name="arrow" /></a>
+    </div>
+    <ul class="card-grid">
+      {latest.map((recipe) => <RecipeCard recipe={recipe} />)}
+    </ul>
+  </section>
+
+  <section class="container" style="padding-bottom: clamp(48px, 8vw, 88px)">
+    <div class="split">
+      <div class="panel feature">
+        <Image src={famPic} alt="The family" width={280} />
+        <div>
+          <p class="eyebrow">About</p>
+          <h3>How it started</h3>
+          <p>
+            A Blackstone griddle birthday present, a lot of time at home in 2020, and a family that kept asking for
+            seconds.
+          </p>
+          <a class="link-arrow" href="/about/">Read the story <Icon name="arrow" /></a>
         </div>
       </div>
+      {
+        newsletter && (
+          <div class="panel feature">
+            <Image src={newsletter.data.cover} alt="" width={280} />
+            <div>
+              <p class="eyebrow">Latest newsletter</p>
+              <h3>{newsletter.data.title}</h3>
+              <p>Monthly notes on recipes, reviews, music and more.</p>
+              <a class="link-arrow" href="/newsletters/">
+                All newsletters <Icon name="arrow" />
+              </a>
+            </div>
+          </div>
+        )
+      }
     </div>
-  </div>
-
-  <div class="recipe_area">
-    <div class="container">
-      <h1>Most Recent Recipes</h1>
-      <div class="row">
-        {latest.map((recipe) => <RecipeCard recipe={recipe} />)}
-      </div>
-    </div>
-  </div>
+  </section>
 </Base>

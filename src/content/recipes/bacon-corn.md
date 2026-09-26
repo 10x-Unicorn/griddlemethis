@@ -9,7 +9,6 @@ prepMinutes: 9
 cookMinutes: 6
 totalMinutes: 15
 hero: "../../../img/recipe/Bacon_Corn/bacon_corn_fin.jpg"
-thumbnail: "../../../img/recipe/Bacon_Corn/bacon_corn_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

@@ -1,23 +1,32 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import { formatMinutes } from '../lib/recipes';
 
 interface Props {
   recipe: CollectionEntry<'recipes'>;
+  eager?: boolean;
 }
 
-const { recipe } = Astro.props;
-const { title, category, totalMinutes, thumbnail, hero } = recipe.data;
+const { recipe, eager = false } = Astro.props;
+const { title, category, totalMinutes, hero } = recipe.data;
 ---
 
-<div class="col-xl-4 col-lg-4 col-md-6">
-  <div class="single_recipe text-center">
-    <div class="recipe_thumb">
-      <Image src={thumbnail ?? hero} alt={title} width={300} height={300} fit="cover" densities={[1, 2]} />
-    </div>
-    <h3>{title}</h3>
-    <span>{category}</span>
-    <p>Time Needed: {totalMinutes} Mins</p>
-    <a href={`/recipes/${recipe.id}/`} class="line_btn">View Full Recipe</a>
+<li class="recipe-card" data-category={category}>
+  <div class="recipe-card__img">
+    <Image
+      src={hero}
+      alt=""
+      width={640}
+      height={480}
+      widths={[320, 480, 640]}
+      sizes="(min-width: 1120px) 352px, (min-width: 640px) 45vw, 100vw"
+      fit="cover"
+      loading={eager ? 'eager' : 'lazy'}
+    />
   </div>
-</div>
+  <p class="eyebrow">{category}</p>
+  <h3><a href={`/recipes/${recipe.id}/`}>{title}</a></h3>
+  <p class="meta-inline"><Icon name="clock" size={16} /> {formatMinutes(totalMinutes)}</p>
+</li>

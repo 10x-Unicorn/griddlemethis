@@ -9,7 +9,6 @@ prepMinutes: 10
 cookMinutes: 0
 totalMinutes: 10
 hero: "../../../img/recipe/pb_protein_bite/61815379824__7B716B49-4812-4DCB-AEDD-5C7DA34E5999.jpeg"
-thumbnail: "../../../img/recipe/pb_protein_bite/pb_circle.png"
 ingredients:
   - heading: "Ingredients:"
     items:

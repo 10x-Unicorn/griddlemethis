@@ -9,7 +9,6 @@ prepMinutes: 60
 cookMinutes: 30
 totalMinutes: 90
 hero: "../../../img/recipe/griddle_ratatouille/ratatouille_fin.jpg"
-thumbnail: "../../../img/recipe/griddle_ratatouille/ratatouille_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

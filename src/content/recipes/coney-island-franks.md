@@ -9,7 +9,6 @@ prepMinutes: 15
 cookMinutes: 30
 totalMinutes: 45
 hero: "../../../img/recipe/coney_island_franks/coney_island_franks_fin.jpeg"
-thumbnail: "../../../img/recipe/coney_island_franks/coney_island_franks_cir.jpeg"
 ingredients:
   - heading: "Hot Dog"
     items:

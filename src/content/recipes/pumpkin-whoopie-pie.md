@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 10
 totalMinutes: 20
 hero: "../../../img/recipe/pumpkin_whoopie_pie/PWP_Fin.JPG"
-thumbnail: "../../../img/recipe/pumpkin_whoopie_pie/PWP_Circ.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

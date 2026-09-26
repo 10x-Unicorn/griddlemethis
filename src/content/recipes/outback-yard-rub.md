@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 0
 totalMinutes: 5
 hero: "../../../img/recipe/Aunt_Pattys_Crab_Cake/apcc_fin.jpg"
-thumbnail: "../../../img/recipe/outback_yard_rub/outback_yard_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

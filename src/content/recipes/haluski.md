@@ -9,7 +9,6 @@ prepMinutes: 15
 cookMinutes: 15
 totalMinutes: 30
 hero: "../../../img/recipe/haluski/haluski_fin.JPEG"
-thumbnail: "../../../img/recipe/haluski/haluski_cir.JPEG"
 ingredients:
   - heading: "Ingredients"
     items:

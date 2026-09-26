@@ -9,7 +9,6 @@ prepMinutes: 40
 cookMinutes: 20
 totalMinutes: 60
 hero: "../../../img/recipe/Full_Hibachi_Dinner/hibachi_fin.jpeg"
-thumbnail: "../../../img/recipe/Full_Hibachi_Dinner/hibachi_cir.jpg"
 ingredients:
   - heading: "Fried Rice:"
     items:

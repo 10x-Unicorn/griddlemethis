@@ -9,7 +9,6 @@ prepMinutes: 40
 cookMinutes: 20
 totalMinutes: 60
 hero: "../../../img/recipe/smashed_meatballs/sm_fin.jpg"
-thumbnail: "../../../img/recipe/smashed_meatballs/sm_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

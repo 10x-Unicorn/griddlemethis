@@ -9,7 +9,6 @@ prepMinutes: 20
 cookMinutes: 10
 totalMinutes: 30
 hero: "../../../img/recipe/gyro/gyro_fin.jpg"
-thumbnail: "../../../img/recipe/gyro/gyro_cir.jpg"
 ingredients:
   - heading: "Tzatziki"
     items:

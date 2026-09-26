@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 7
 totalMinutes: 12
 hero: "../../../img/recipe/LGA/LGA_tray.jpg"
-thumbnail: "../../../img/recipe/LGA/LGA_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 6
 totalMinutes: 11
 hero: "../../../img/recipe/GGB/GGB_tray.jpg"
-thumbnail: "../../../img/recipe/GGB/GGB_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

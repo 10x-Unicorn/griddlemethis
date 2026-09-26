@@ -9,7 +9,6 @@ prepMinutes: 40
 cookMinutes: 20
 totalMinutes: 60
 hero: "../../../img/recipe/chicken_marsala/chicken_marsala_fin.jpg"
-thumbnail: "../../../img/recipe/chicken_marsala/chicken_marsala_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

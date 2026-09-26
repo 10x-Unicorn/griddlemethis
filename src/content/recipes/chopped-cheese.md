@@ -9,7 +9,6 @@ prepMinutes: 20
 cookMinutes: 20
 totalMinutes: 40
 hero: "../../../img/recipe/Chopped_Cheese/Chopped_Cheese_fin2.jpg"
-thumbnail: "../../../img/recipe/Chopped_Cheese/Chopped_Cheese_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

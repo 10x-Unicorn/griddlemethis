@@ -9,7 +9,6 @@ prepMinutes: 20
 cookMinutes: 10
 totalMinutes: 30
 hero: "../../../img/recipe/lo_mein/lo_mein_fin.jpg"
-thumbnail: "../../../img/recipe/lo_mein/lo_mein_cir_2.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

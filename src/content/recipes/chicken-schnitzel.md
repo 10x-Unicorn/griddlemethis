@@ -9,7 +9,6 @@ prepMinutes: 15
 cookMinutes: 12
 totalMinutes: 27
 hero: "../../../img/recipe/chicken_schnitzel/schintzel_fin.jpg"
-thumbnail: "../../../img/recipe/chicken_schnitzel/schnitzel_cir.jpg"
 ingredients:
   - heading: "Chicken"
     items:

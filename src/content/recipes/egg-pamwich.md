@@ -9,7 +9,6 @@ prepMinutes: 5
 cookMinutes: 5
 totalMinutes: 20
 hero: "../../../img/recipe/egg_pamwich/egg_pamwichfin.JPG"
-thumbnail: "../../../img/recipe/egg_pamwich/egg_pamwichfin_cic.JPG"
 ingredients:
   - heading: "Ingredients:"
     items:

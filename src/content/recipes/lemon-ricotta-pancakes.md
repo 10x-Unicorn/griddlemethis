@@ -9,7 +9,6 @@ prepMinutes: 8
 cookMinutes: 18
 totalMinutes: 26
 hero: "../../../img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_mainPic.jpg"
-thumbnail: "../../../img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_cic.png"
 ingredients:
   - heading: "Ingredients"
     items:

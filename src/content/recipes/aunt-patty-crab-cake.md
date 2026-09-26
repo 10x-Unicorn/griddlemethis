@@ -9,7 +9,6 @@ prepMinutes: 20
 cookMinutes: 10
 totalMinutes: 30
 hero: "../../../img/recipe/Aunt_Pattys_Crab_Cake/apcc_fin.jpg"
-thumbnail: "../../../img/recipe/Aunt_Pattys_Crab_Cake/apcc_cir.jpg"
 ingredients:
   - heading: "Ingredients"
     items:

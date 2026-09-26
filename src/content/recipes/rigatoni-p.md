@@ -9,7 +9,6 @@ prepMinutes: 40
 cookMinutes: 20
 totalMinutes: 60
 hero: "../../../img/recipe/rigatoni_p/rigatoni_p_fin.JPG"
-thumbnail: "../../../img/recipe/rigatoni_p/rigatoni_p_cir.JPG"
 ingredients:
   - heading: "Ingredients"
     items:

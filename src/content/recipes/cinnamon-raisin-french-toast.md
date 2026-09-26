@@ -9,7 +9,6 @@ prepMinutes: 15
 cookMinutes: 10
 totalMinutes: 30
 hero: "../../../img/recipe/French_Toast/FrenchToastFin.jpg"
-thumbnail: "../../../img/recipe/French_Toast/FrenchToastFinSM.jpg"
 ingredients:
   - heading: "For French Toast"
     items:
