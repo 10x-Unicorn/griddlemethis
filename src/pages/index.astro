@@ -8,13 +8,26 @@ import { getListedRecipes } from '../lib/recipes';
 import heroImg from '../../img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_preparation.jpg';
 import famPic from '../../img/fam_pic.jpg';
 
-const latest = (await getListedRecipes()).slice(0, 3);
+const recipes = await getListedRecipes();
+const latest = recipes.slice(0, 3);
+
+// Tells Google the site's name, and that "griddlemethisdad" (the domain,
+// typed as one word) and the other spellings refer to this site.
+const website = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Griddle Me This, Dad?',
+  alternateName: ['griddlemethisdad', 'Griddle Me This Dad', 'GMTD'],
+  url: new URL('/', Astro.site).href,
+};
+const description = `Griddle Me This, Dad? (griddlemethisdad.com): ${recipes.length} backyard griddle recipes for breakfast, dinner, sides and snacks, plus a monthly newsletter.`;
 const [newsletter] = (await getCollection('newsletters')).sort(
   (a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
 );
 ---
 
-<Base title="Home">
+<Base title="Home" description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(website)} />
   <section class="hero">
     <Image
       src={heroImg}
