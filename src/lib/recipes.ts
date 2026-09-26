@@ -1,4 +1,5 @@
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { normalize } from './search';
 
 /** Listed recipes, newest first. */
 export async function getListedRecipes() {
@@ -20,4 +21,17 @@ export function formatMinutes(minutes: number) {
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
   return [h && `${h} hr`, (m || !h) && `${m} min`].filter(Boolean).join(' ');
+}
+
+/** Everything a recipe can be found by in the recipe list's search box. */
+export function searchText({ data }: CollectionEntry<'recipes'>) {
+  return normalize(
+    [
+      data.title,
+      data.category,
+      ...data.tags,
+      data.description,
+      ...data.ingredients.flatMap((group) => [group.heading ?? '', ...group.items]),
+    ].join(' '),
+  );
 }

@@ -1,0 +1,192 @@
+---
+// Header search with a results preview, on every page (including the recipe
+// list, so the header doesn't shift between pages). Submitting (or "See all") opens the
+// recipe list filtered by the query (/recipes/?q=...), which also works
+// without JavaScript. On narrow screens the box sits behind a search icon.
+import Icon from './Icon.astro';
+---
+
+<div class="site-search" data-site-search>
+  <button
+    class="site-search__toggle"
+    type="button"
+    aria-label="Search recipes"
+    aria-expanded="false"
+    aria-controls="site-search-form"
+    data-search-toggle
+  >
+    <Icon name="search" size={24} />
+  </button>
+  <form class="site-search__form" id="site-search-form" role="search" action="/recipes/" method="get">
+    <label class="visually-hidden" for="site-search-input">Search recipes</label>
+    <Icon name="search" />
+    <input
+      class="input"
+      id="site-search-input"
+      name="q"
+      type="search"
+      placeholder="Search recipes…"
+      autocomplete="off"
+      enterkeyhint="search"
+      role="combobox"
+      aria-expanded="false"
+      aria-controls="site-search-results"
+      aria-autocomplete="list"
+    />
+    <div class="site-search__panel" data-search-panel hidden>
+      <ul id="site-search-results" role="listbox" aria-label="Matching recipes"></ul>
+      <p class="site-search__empty" data-search-empty hidden></p>
+      <a class="site-search__all" href="/recipes/" data-search-all></a>
+    </div>
+  </form>
+</div>
+
+<script>
+  import { normalize, queryWords, type SearchItem } from '../lib/search';
+
+  const MAX_RESULTS = 5;
+  const root = document.querySelector<HTMLElement>('[data-site-search]');
+
+  if (root) {
+    const toggle = root.querySelector<HTMLButtonElement>('[data-search-toggle]')!;
+    const form = root.querySelector<HTMLFormElement>('form')!;
+    const input = root.querySelector<HTMLInputElement>('input')!;
+    const panel = root.querySelector<HTMLElement>('[data-search-panel]')!;
+    const list = root.querySelector<HTMLUListElement>('ul')!;
+    const empty = root.querySelector<HTMLElement>('[data-search-empty]')!;
+    const seeAll = root.querySelector<HTMLAnchorElement>('[data-search-all]')!;
+
+    type Item = SearchItem & { titleText: string };
+    let items: Promise<Item[]> | undefined;
+    const load = () =>
+      (items ??= fetch('/search.json')
+        .then((r) => r.json() as Promise<SearchItem[]>)
+        .then((data) => data.map((item) => ({ ...item, titleText: normalize(item.title) }))));
+
+    let results: Item[] = [];
+    let active = -1;
+
+    const setOpen = (open: boolean) => {
+      panel.hidden = !open;
+      input.setAttribute('aria-expanded', String(open));
+      if (!open) setActive(-1);
+    };
+
+    const setActive = (index: number) => {
+      active = index;
+      list.querySelectorAll('[role="option"]').forEach((option, i) => option.setAttribute('aria-selected', String(i === index)));
+      if (index >= 0) input.setAttribute('aria-activedescendant', `site-search-option-${index}`);
+      else input.removeAttribute('aria-activedescendant');
+    };
+
+    const option = (item: Item, index: number) => {
+      const li = document.createElement('li');
+      li.id = `site-search-option-${index}`;
+      li.setAttribute('role', 'option');
+      li.setAttribute('aria-selected', 'false');
+      const link = document.createElement('a');
+      link.href = item.url;
+      link.tabIndex = -1;
+      const img = document.createElement('img');
+      img.src = item.thumb;
+      img.alt = '';
+      img.width = 48;
+      img.height = 48;
+      const text = document.createElement('span');
+      const title = document.createElement('strong');
+      title.textContent = item.title;
+      const meta = document.createElement('small');
+      meta.textContent = `${item.category} · ${item.time}`;
+      text.append(title, meta);
+      link.append(img, text);
+      li.append(link);
+      return li;
+    };
+
+    async function update() {
+      const query = input.value.trim();
+      const words = queryWords(query);
+      if (!words.length) {
+        setOpen(false);
+        return;
+      }
+      const recipes = await load();
+      if (input.value.trim() !== query) return; // a newer keystroke will render
+      // Recipes whose name matches come first; otherwise keep newest-first order.
+      const score = (item: Item) => words.filter((w) => item.titleText.includes(w)).length;
+      results = recipes
+        .filter((item) => words.every((w) => item.text.includes(w)))
+        .map((item, i) => ({ item, i, s: score(item) }))
+        .sort((a, b) => b.s - a.s || a.i - b.i)
+        .map(({ item }) => item);
+
+      list.replaceChildren(...results.slice(0, MAX_RESULTS).map(option));
+      empty.hidden = results.length > 0;
+      empty.textContent = `No recipes match “${query}”.`;
+      seeAll.hidden = results.length === 0;
+      seeAll.href = `/recipes/?q=${encodeURIComponent(query)}`;
+      seeAll.textContent = results.length === 1 ? 'See it on the recipe list' : `See all ${results.length} results`;
+      setActive(-1);
+      setOpen(true);
+    }
+
+    input.addEventListener('focus', () => {
+      load();
+      if (input.value.trim()) update();
+    });
+    input.addEventListener('input', update);
+
+    input.addEventListener('keydown', (event) => {
+      const shown = Math.min(results.length, MAX_RESULTS);
+      if (event.key === 'ArrowDown' && shown) {
+        event.preventDefault();
+        if (panel.hidden) setOpen(true);
+        setActive((active + 1) % shown);
+      } else if (event.key === 'ArrowUp' && shown) {
+        event.preventDefault();
+        setActive(active <= 0 ? shown - 1 : active - 1);
+      } else if (event.key === 'Enter' && active >= 0 && !panel.hidden) {
+        event.preventDefault();
+        location.href = results[active].url;
+      } else if (event.key === 'Escape') {
+        if (!panel.hidden) setOpen(false);
+        else if (root.classList.contains('is-open')) closeSmallScreen();
+      }
+    });
+
+    // An empty search just opens the full recipe list.
+    form.addEventListener('submit', (event) => {
+      if (!input.value.trim()) {
+        event.preventDefault();
+        location.href = '/recipes/';
+      }
+    });
+
+    // Close when focus or a click leaves the search.
+    root.addEventListener('focusout', (event) => {
+      if (!root.contains(event.relatedTarget as Node | null)) setOpen(false);
+    });
+    document.addEventListener('pointerdown', (event) => {
+      if (!root.contains(event.target as Node)) {
+        setOpen(false);
+        if (root.classList.contains('is-open') && !toggle.contains(event.target as Node)) closeSmallScreen();
+      }
+    });
+
+    // Small screens: the search icon shows and hides the box.
+    const closeSmallScreen = () => {
+      root.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    };
+    toggle.addEventListener('click', () => {
+      if (root.classList.contains('is-open')) {
+        closeSmallScreen();
+      } else {
+        root.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        input.focus();
+      }
+    });
+  }
+</script>
