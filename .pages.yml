@@ -8,7 +8,9 @@ media:
     label: Photos
     input: img
     output: /img
-    categories: [image]
+    # Pages CMS matches file types case-sensitively, and many photos end in
+    # .JPG/.JPEG/.PNG, so list both cases (the "image" category is lowercase only).
+    extensions: [jpg, jpeg, png, webp, gif, JPG, JPEG, PNG, WEBP, GIF]
   - name: newsletters
     label: Newsletter PDFs
     input: public/newsletters
