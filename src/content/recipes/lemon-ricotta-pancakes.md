@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 8
 cookMinutes: 18
 totalMinutes: 26
-hero: "../../../img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_mainPic.jpg"
+hero: "/img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_mainPic.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -27,8 +27,8 @@ steps:
       - "Place pancake mix in a large bowl. Gently whisk in wet ingredients until just combined."
       - "Let the batter sit for at least 3-5 min."
 photos:
-  plan: ["../../../img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_planning2.jpg"]
-  prep: ["../../../img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_preparation.jpg"]
+  plan: ["/img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_planning2.jpg"]
+  prep: ["/img/recipe/lemon_ricotta_pancakes/lemon_ricotta_pancake_preparation.jpg"]
   performance: []
 ---
 

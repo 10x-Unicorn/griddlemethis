@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 20
 cookMinutes: 20
 totalMinutes: 40
-hero: "../../../img/recipe/JPGC/jpgc_fin.JPG"
+hero: "/img/recipe/JPGC/jpgc_fin.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -28,8 +28,8 @@ steps:
       - "Let the batter sit for at least 3-5 min."
 prepNotes: ["Set your griddle to medium heat (~400F)"]
 photos:
-  plan: ["../../../img/recipe/JPGC/jpgc_plan.JPG"]
-  prep: ["../../../img/recipe/JPGC/jpgc_prep.JPG"]
+  plan: ["/img/recipe/JPGC/jpgc_plan.JPG"]
+  prep: ["/img/recipe/JPGC/jpgc_prep.JPG"]
   performance: []
 ---
 

@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 2
 cookMinutes: 8
 totalMinutes: 10
-hero: "../../../img/recipe/sweet_potato_hash/potato_hash_fin.JPG"
+hero: "/img/recipe/sweet_potato_hash/potato_hash_fin.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -25,8 +25,8 @@ steps:
     items:
       - "Assemble all ingredients to sheet tray."
 photos:
-  plan: ["../../../img/recipe/sweet_potato_hash/potato_hash_plan.JPG"]
-  prep: ["../../../img/recipe/sweet_potato_hash/potato_hash_prep.JPG"]
+  plan: ["/img/recipe/sweet_potato_hash/potato_hash_plan.JPG"]
+  prep: ["/img/recipe/sweet_potato_hash/potato_hash_prep.JPG"]
   performance: []
 ---
 

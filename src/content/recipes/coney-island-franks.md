@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 15
 cookMinutes: 30
 totalMinutes: 45
-hero: "../../../img/recipe/coney_island_franks/coney_island_franks_fin.jpeg"
+hero: "/img/recipe/coney_island_franks/coney_island_franks_fin.jpeg"
 ingredients:
   - heading: "Hot Dog"
     items:
@@ -32,9 +32,9 @@ steps:
       - "Cut dinner rolls into 2 roll batons, then cut in partially in half."
       - "Cook hot dogs in a separate pot in water with some minced garlic."
 photos:
-  plan: ["../../../img/recipe/coney_island_franks/coney_island_plan.jpeg"]
-  prep: ["../../../img/recipe/coney_island_franks/coney_island_prep.jpeg"]
-  performance: ["../../../img/recipe/coney_island_franks/coney_island_perf.jpeg"]
+  plan: ["/img/recipe/coney_island_franks/coney_island_plan.jpeg"]
+  prep: ["/img/recipe/coney_island_franks/coney_island_prep.jpeg"]
+  performance: ["/img/recipe/coney_island_franks/coney_island_perf.jpeg"]
 ---
 
 Serve, enjoy!

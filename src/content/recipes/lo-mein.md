@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 20
 cookMinutes: 10
 totalMinutes: 30
-hero: "../../../img/recipe/lo_mein/lo_mein_fin.jpg"
+hero: "/img/recipe/lo_mein/lo_mein_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -29,8 +29,8 @@ steps:
     items:
       - "Whisk the sauce ingredients together in a small bowl. I use a Pyrex 2 cup measuring cup."
 photos:
-  plan: ["../../../img/recipe/lo_mein/lo_mein_plan.jpg"]
-  prep: ["../../../img/recipe/lo_mein/lo_main_prep.jpg"]
+  plan: ["/img/recipe/lo_mein/lo_mein_plan.jpg"]
+  prep: ["/img/recipe/lo_mein/lo_main_prep.jpg"]
   performance: []
 ---
 

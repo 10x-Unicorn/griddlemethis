@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 40
 cookMinutes: 20
 totalMinutes: 60
-hero: "../../../img/recipe/rigatoni_p/rigatoni_p_fin.JPG"
+hero: "/img/recipe/rigatoni_p/rigatoni_p_fin.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -34,8 +34,8 @@ steps:
       - "You can cover the seasoned fillets and refrigerate up to a day to let flavors meld (recommended), or not."
       - "Slice mushrooms to ¼” or less thickness, chop onion ¼” dice, place in bowl."
 photos:
-  plan: ["../../../img/recipe/rigatoni_p/rigatoni_p_plan.JPG"]
-  prep: ["../../../img/recipe/rigatoni_p/rigatoni_p_prep.JPG"]
+  plan: ["/img/recipe/rigatoni_p/rigatoni_p_plan.JPG"]
+  prep: ["/img/recipe/rigatoni_p/rigatoni_p_prep.JPG"]
   performance: []
 ---
 

@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 9
 cookMinutes: 6
 totalMinutes: 15
-hero: "../../../img/recipe/Bacon_Corn/bacon_corn_fin.jpg"
+hero: "/img/recipe/Bacon_Corn/bacon_corn_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -26,8 +26,8 @@ steps:
       - "In small bowl, mix the sour cream, garlic, and lime juice."
       - "Set aside in refrigerator to cool."
 photos:
-  plan: ["../../../img/recipe/Bacon_Corn/bacon_corn_plan.jpg"]
-  prep: ["../../../img/recipe/Bacon_Corn/bacon_corn_prep.jpg"]
+  plan: ["/img/recipe/Bacon_Corn/bacon_corn_plan.jpg"]
+  prep: ["/img/recipe/Bacon_Corn/bacon_corn_prep.jpg"]
   performance: []
 ---
 

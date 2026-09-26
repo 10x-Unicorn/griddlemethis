@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 15
 totalMinutes: 20
-hero: "../../../img/recipe/tavern_sandwich/tavern_sandwich_fin.JPEG"
+hero: "/img/recipe/tavern_sandwich/tavern_sandwich_fin.JPEG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -24,8 +24,8 @@ steps:
       - "Hydrate cullion cube or use 1 Cup of beef broth."
       - "Dice onion."
 photos:
-  plan: ["../../../img/recipe/tavern_sandwich/tavern_sandwich_plan.jpg"]
-  prep: ["../../../img/recipe/tavern_sandwich/tavern_sandwich_prep.jpg"]
+  plan: ["/img/recipe/tavern_sandwich/tavern_sandwich_plan.jpg"]
+  prep: ["/img/recipe/tavern_sandwich/tavern_sandwich_prep.jpg"]
   performance: []
 ---
 

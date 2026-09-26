@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 15
 totalMinutes: 20
-hero: "../../../img/recipe/runza/runza_fin.JPG"
+hero: "/img/recipe/runza/runza_fin.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -25,8 +25,8 @@ steps:
       - "Hydrate cullion cube or use 1 Cup of beef broth."
       - "Dice onion, slice and dice cabbage"
 photos:
-  plan: ["../../../img/recipe/runza/runza_plan.jpg"]
-  prep: ["../../../img/recipe/runza/runza_prep.jpg"]
+  plan: ["/img/recipe/runza/runza_plan.jpg"]
+  prep: ["/img/recipe/runza/runza_prep.jpg"]
   performance: []
 ---
 

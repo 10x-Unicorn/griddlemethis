@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 15
 cookMinutes: 15
 totalMinutes: 30
-hero: "../../../img/recipe/haluski/haluski_fin.JPEG"
+hero: "/img/recipe/haluski/haluski_fin.JPEG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -24,8 +24,8 @@ steps:
       - "Slice cabbage into thin strips. I quarter mine, then slice thinly."
       - "Slice or dice onion."
 photos:
-  plan: ["../../../img/recipe/haluski/haluski_plan.jpg"]
-  prep: ["../../../img/recipe/haluski/haluski_prep.jpg"]
+  plan: ["/img/recipe/haluski/haluski_plan.jpg"]
+  prep: ["/img/recipe/haluski/haluski_prep.jpg"]
   performance: []
 ---
 

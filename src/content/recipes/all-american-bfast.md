@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 15
 totalMinutes: 20
-hero: "../../../img/recipe/All_American_Bfast/AAB_fin.jpg"
+hero: "/img/recipe/All_American_Bfast/AAB_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -28,8 +28,8 @@ steps:
       - "Place breakfast meats and cheese in half sheet tray"
 prepNotes: ["Set your griddle to medium/low heat (~375F)"]
 photos:
-  plan: ["../../../img/recipe/All_American_Bfast/AAB_Plan.jpg"]
-  prep: ["../../../img/recipe/All_American_Bfast/AAB_Prep.jpg"]
+  plan: ["/img/recipe/All_American_Bfast/AAB_Plan.jpg"]
+  prep: ["/img/recipe/All_American_Bfast/AAB_Prep.jpg"]
   performance: []
 ---
 

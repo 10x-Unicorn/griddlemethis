@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 60
 cookMinutes: 30
 totalMinutes: 90
-hero: "../../../img/recipe/griddle_ratatouille/ratatouille_fin.jpg"
+hero: "/img/recipe/griddle_ratatouille/ratatouille_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -36,9 +36,9 @@ steps:
       - "In a Dutch oven, heat the butter and oil, add garlic, cook until fragrant (1 -2 min), add all tomatoes, wine, bay leaves, herbs, and spices and let simmer."
 prepNotes: ["Set your griddle to medium high heat (~400F)"]
 photos:
-  plan: ["../../../img/recipe/griddle_ratatouille/ratatouille_plan.jpg"]
-  prep: ["../../../img/recipe/griddle_ratatouille/ratatouille_prep1.jpg", "../../../img/recipe/griddle_ratatouille/ratatouille_prep2.jpg", "../../../img/recipe/griddle_ratatouille/ratatouille_prep4.jpg"]
-  performance: ["../../../img/recipe/griddle_ratatouille/ratatouille_perf.jpg"]
+  plan: ["/img/recipe/griddle_ratatouille/ratatouille_plan.jpg"]
+  prep: ["/img/recipe/griddle_ratatouille/ratatouille_prep1.jpg", "/img/recipe/griddle_ratatouille/ratatouille_prep2.jpg", "/img/recipe/griddle_ratatouille/ratatouille_prep4.jpg"]
+  performance: ["/img/recipe/griddle_ratatouille/ratatouille_perf.jpg"]
 ---
 
 Make sure surface is coated with oil. Flip 1st half sheet to griddle ensuring all onions and mushrooms are flat on griddle to maximize sear. Sear for 3 minutes per side, add oil in between. Flip after 3 min. Move to one side. Add more oil and flip 2nd half sheet tray to griddle ensure all other veggies are flat to ensure good sear. Flip after 3 min. Let cook 3 more min until all veggies are tender. Move back to half sheet tray. Add veggies to sauce and bring to simmer. Serve with whatever you enjoy, chicken, rice, pork, over spinach.

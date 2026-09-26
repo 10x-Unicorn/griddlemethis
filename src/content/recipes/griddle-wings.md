@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 18
 cookMinutes: 22
 totalMinutes: 40
-hero: "../../../img/recipe/Griddle_Wings/griddle_wings_fin.JPEG"
+hero: "/img/recipe/Griddle_Wings/griddle_wings_fin.JPEG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -24,8 +24,8 @@ steps:
       - "Season all wings with the two seasonings"
       - "In a separate bowl melt 4 tbsp of butter and whisk in the Franks (adjust to your level of heat."
 photos:
-  plan: ["../../../img/recipe/Griddle_Wings/griddle_wings_plan.jpg"]
-  prep: ["../../../img/recipe/Griddle_Wings/griddle_wings_prep.jpg"]
+  plan: ["/img/recipe/Griddle_Wings/griddle_wings_plan.jpg"]
+  prep: ["/img/recipe/Griddle_Wings/griddle_wings_prep.jpg"]
   performance: []
 ---
 

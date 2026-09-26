@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 1
 cookMinutes: 4
 totalMinutes: 5
-hero: "../../../img/recipe/MD_griddle _popcorn/MD_popcorn_fin.jpg"
+hero: "/img/recipe/MD_griddle _popcorn/MD_popcorn_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -21,8 +21,8 @@ steps:
       - "Place 2 tbs of butter in half sheet tray."
 prepNotes: ["Set your griddle to medium heat (~400)"]
 photos:
-  plan: ["../../../img/recipe/MD_griddle _popcorn/MD_popcorn_plan.jpg"]
-  prep: ["../../../img/recipe/MD_griddle _popcorn/MD_popcorn_prep.jpg"]
+  plan: ["/img/recipe/MD_griddle _popcorn/MD_popcorn_plan.jpg"]
+  prep: ["/img/recipe/MD_griddle _popcorn/MD_popcorn_prep.jpg"]
   performance: []
 ---
 

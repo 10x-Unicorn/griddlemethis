@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 7
 totalMinutes: 12
-hero: "../../../img/recipe/LGA/LGA_tray.jpg"
+hero: "/img/recipe/LGA/LGA_tray.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -24,8 +24,8 @@ steps:
       - "Slice lemon in half."
       - "Assemble all ingredients into a half sheet tray."
 photos:
-  plan: ["../../../img/recipe/LGA/LGA_ingred.jpg"]
-  prep: ["../../../img/recipe/LGA/LGA_grid_2.jpg"]
+  plan: ["/img/recipe/LGA/LGA_ingred.jpg"]
+  prep: ["/img/recipe/LGA/LGA_grid_2.jpg"]
   performance: []
 ---
 

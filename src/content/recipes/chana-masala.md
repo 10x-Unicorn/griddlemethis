@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 10
 cookMinutes: 20
 totalMinutes: 30
-hero: "../../../img/recipe/Chana_Masala/chana_masala_fin.JPG"
+hero: "/img/recipe/Chana_Masala/chana_masala_fin.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -36,9 +36,9 @@ steps:
       - "Add salsa and tomato sauce. Let simmer for about 10-15 minutes, stirring occasionally until sauce thickens and becomes a deep reddish-brown color."
       - "Stir the yogurt, sugar, and 1 Oz butter through the sauce."
 photos:
-  plan: ["../../../img/recipe/Chana_Masala/chana_masala_plan.JPG"]
-  prep: ["../../../img/recipe/Chana_Masala/chana_masala_prep.JPG"]
-  performance: ["../../../img/recipe/Chana_Masala/chana_masala_perf.JPG"]
+  plan: ["/img/recipe/Chana_Masala/chana_masala_plan.JPG"]
+  prep: ["/img/recipe/Chana_Masala/chana_masala_prep.JPG"]
+  performance: ["/img/recipe/Chana_Masala/chana_masala_perf.JPG"]
 ---
 
 Have griddle medium hot, like 400F, make sure surface is coated with butter. Place veggies on griddle ensuring all are flat on griddle to maximize sear. Sear for 3 minutes per side, add butter in between, flip every 3 min till cooked through, about 12 min. Move to half sheet tray. Add to sauce in Dutch Oven. Add baby spinach and cook through (5 min).

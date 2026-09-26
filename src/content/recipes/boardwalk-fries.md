@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 18
 cookMinutes: 12
 totalMinutes: 30
-hero: "../../../img/recipe/Boardwalk_Fries/boardwalk_fries_fin.JPG"
+hero: "/img/recipe/Boardwalk_Fries/boardwalk_fries_fin.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -23,8 +23,8 @@ steps:
       - "After cooling, slice potatoes into batons (fries)."
       - "Assemble all ingredients into a half sheet tray."
 photos:
-  plan: ["../../../img/recipe/Boardwalk_Fries/boardwalk_fries_plan.jpg"]
-  prep: ["../../../img/recipe/Boardwalk_Fries/boardwalk_fries_prep.jpg"]
+  plan: ["/img/recipe/Boardwalk_Fries/boardwalk_fries_plan.jpg"]
+  prep: ["/img/recipe/Boardwalk_Fries/boardwalk_fries_prep.jpg"]
   performance: []
 ---
 

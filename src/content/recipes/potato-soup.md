@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 15
 cookMinutes: 30
 totalMinutes: 45
-hero: "../../../img/recipe/potato_soup/potato_soup_fin.JPG"
+hero: "/img/recipe/potato_soup/potato_soup_fin.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -25,8 +25,8 @@ steps:
       - "Chop onion, carrots, and celery into ¼ inch dice."
       - "Microwave potatoes, let cool, cube into ½ inch cubes."
 photos:
-  plan: ["../../../img/recipe/potato_soup/potato_soup_plan.JPG"]
-  prep: ["../../../img/recipe/potato_soup/potato_soup_prep.JPG"]
+  plan: ["/img/recipe/potato_soup/potato_soup_plan.JPG"]
+  prep: ["/img/recipe/potato_soup/potato_soup_prep.JPG"]
   performance: []
 ---
 

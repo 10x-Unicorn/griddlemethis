@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 5
 totalMinutes: 20
-hero: "../../../img/recipe/egg_pamwich/egg_pamwichfin.JPG"
+hero: "/img/recipe/egg_pamwich/egg_pamwichfin.JPG"
 ingredients:
   - heading: "Ingredients:"
     items:
@@ -25,8 +25,8 @@ steps:
       - "- Butter bread on both sides, place in half sheet tray"
       - "- Place breakfast meats and cheese in half sheet tray"
 photos:
-  plan: ["../../../img/recipe/egg_pamwich/egg_pamwich_plan.JPG"]
-  prep: ["../../../img/recipe/egg_pamwich/egg_pamwich_prep.JPG"]
+  plan: ["/img/recipe/egg_pamwich/egg_pamwich_plan.JPG"]
+  prep: ["/img/recipe/egg_pamwich/egg_pamwich_prep.JPG"]
   performance: []
 ---
 

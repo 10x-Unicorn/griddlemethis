@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 10
 totalMinutes: 15
-hero: "../../../img/recipe/Summer_Squash_Sauté/sss_fin.JPG"
+hero: "/img/recipe/Summer_Squash_Sauté/sss_fin.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -26,8 +26,8 @@ steps:
       - "- Peel and chop onion to ¼ inch dice. Place in half sheet tray."
       - "- Drizzle olive oil and seasoning over veggies and mix. Seasoning is driven by what type of meal that you are pairing this side with, For Mexican, I use Southwest Seasoning by McCormick (1 TBSP). For Italian, use Italian Seasoning (1 TSP) and Parmesan Cheese (1 TBSP). For Asian, I use fresh ginger (1 TSP) and Teriyaki Sauce (1 TBSP). Adjust seasoning to your taste."
 photos:
-  plan: ["../../../img/recipe/Summer_Squash_Sauté/sss_prep.JPG"]
-  prep: ["../../../img/recipe/Summer_Squash_Sauté/sss_prep2.JPG"]
+  plan: ["/img/recipe/Summer_Squash_Sauté/sss_prep.JPG"]
+  prep: ["/img/recipe/Summer_Squash_Sauté/sss_prep2.JPG"]
   performance: []
 ---
 

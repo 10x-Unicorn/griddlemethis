@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 3
 cookMinutes: 12
 totalMinutes: 15
-hero: "../../../img/recipe/E2B/E2BFin.jpg"
+hero: "/img/recipe/E2B/E2BFin.jpg"
 ingredients:
   - heading: "Ingredients:"
     items:
@@ -31,8 +31,8 @@ steps:
       - "- Butter bagel on both sides, place in half sheet tray"
       - "- Place breakfast meats and cheese in half sheet tray"
 photos:
-  plan: ["../../../img/recipe/E2B/E2BSauce.jpg"]
-  prep: ["../../../img/recipe/egg_pamwich/egg_pamwich_prep.JPG"]
+  plan: ["/img/recipe/E2B/E2BSauce.jpg"]
+  prep: ["/img/recipe/egg_pamwich/egg_pamwich_prep.JPG"]
   performance: []
 ---
 

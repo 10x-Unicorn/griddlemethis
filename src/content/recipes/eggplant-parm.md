@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 90
 cookMinutes: 30
 totalMinutes: 120
-hero: "../../../img/recipe/griddle_eggplant_parmesan/eggplant_parm_fin.jpg"
+hero: "/img/recipe/griddle_eggplant_parmesan/eggplant_parm_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -31,9 +31,9 @@ steps:
       - "Dip eggplant in flour, then eggs, the breadcrumbs place on wire rack till ready to griddle."
 prepNotes: ["Set your griddle to medium heat (~400F)"]
 photos:
-  plan: ["../../../img/recipe/griddle_eggplant_parmesan/eggplant_parm_ingred.jpg"]
-  prep: ["../../../img/recipe/griddle_eggplant_parmesan/eggplant_parm_prep1.jpg", "../../../img/recipe/griddle_eggplant_parmesan/eggplant_parm_prep2.jpg", "../../../img/recipe/griddle_eggplant_parmesan/eggplant_parm_prep3.jpg"]
-  performance: ["../../../img/recipe/griddle_eggplant_parmesan/eggplant_parm_perf_1.jpg", "../../../img/recipe/griddle_eggplant_parmesan/eggplant_parm_perf2.jpg"]
+  plan: ["/img/recipe/griddle_eggplant_parmesan/eggplant_parm_ingred.jpg"]
+  prep: ["/img/recipe/griddle_eggplant_parmesan/eggplant_parm_prep1.jpg", "/img/recipe/griddle_eggplant_parmesan/eggplant_parm_prep2.jpg", "/img/recipe/griddle_eggplant_parmesan/eggplant_parm_prep3.jpg"]
+  performance: ["/img/recipe/griddle_eggplant_parmesan/eggplant_parm_perf_1.jpg", "/img/recipe/griddle_eggplant_parmesan/eggplant_parm_perf2.jpg"]
 ---
 
 Coat griddle with 2 tbsp of olive oil, spreading evenly, add breaded eggplant. Flip after 3 min. Flip again and watch carefully for about 2 min. Continue cooking to desired crispiness (6-8 Min for me). Return to sheet tray.

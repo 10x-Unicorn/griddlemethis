@@ -1,0 +1,218 @@
+# Pages CMS (https://pagescms.org): edit recipes and newsletters through web
+# forms at https://app.pagescms.org. Saving commits the change to GitHub, and
+# Netlify rebuilds the site. The fields here mirror src/content.config.ts;
+# keep the two in sync when adding or renaming a field.
+
+media:
+  - name: photos
+    label: Photos
+    input: img
+    output: /img
+    categories: [image]
+  - name: newsletters
+    label: Newsletter PDFs
+    input: public/newsletters
+    output: /newsletters
+    extensions: [pdf]
+
+content:
+  - name: recipes
+    label: Recipes
+    type: collection
+    path: src/content/recipes
+    format: yaml-frontmatter
+    # e.g. "Smash Burgers" -> smash-burgers.md -> /recipes/smash-burgers/
+    filename: "{primary}.md"
+    view:
+      fields: [title, category, published]
+      primary: title
+      sort: [published, title]
+      default:
+        sort: published
+        order: desc
+    fields:
+      - name: title
+        label: Recipe name
+        type: string
+        required: true
+      - name: description
+        label: Short description
+        type: text
+        required: true
+        description: One or two sentences shown at the top of the recipe and in search results.
+      - name: published
+        label: Date published
+        type: date
+        required: true
+        description: Newest recipes appear first on the home page and recipe list.
+        options:
+          format: yyyy-MM-dd
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values: [Breakfast, Lunch, Dinner, Side, Snack, Dessert, Sauce, Seasoning, Other]
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+        description: Main ingredients or cuisine, e.g. Chicken, Indian.
+      - name: rating
+        label: Rating (1–5 stars)
+        type: number
+        options:
+          min: 1
+          max: 5
+      - name: prepMinutes
+        label: Prep time (minutes)
+        type: number
+        options:
+          min: 0
+      - name: cookMinutes
+        label: Cook time (minutes)
+        type: number
+        options:
+          min: 0
+      - name: totalMinutes
+        label: Ready in (minutes)
+        type: number
+        required: true
+        options:
+          min: 1
+      - name: hero
+        label: Main photo
+        type: image
+        required: true
+        description: The finished dish. Used on the recipe page, recipe cards and search results.
+        options:
+          media: photos
+          path: img/recipe
+          rename: safe
+      - name: ingredients
+        label: "Planning: ingredients"
+        type: object
+        list: true
+        required: true
+        description: Add a group per part of the dish (e.g. Marinade, Sauce). Leave the heading blank if there's only one group.
+        fields:
+          - name: heading
+            label: Group heading
+            type: string
+          - name: items
+            label: Ingredients
+            type: string
+            list: true
+            required: true
+      - name: steps
+        label: "Preparation: steps"
+        type: object
+        list: true
+        required: true
+        description: Steps are numbered automatically, continuing across groups.
+        fields:
+          - name: heading
+            label: Group heading
+            type: string
+          - name: items
+            label: Steps
+            type: string
+            list: true
+            required: true
+      - name: prepNotes
+        label: Preparation notes
+        type: string
+        list: true
+        description: Highlighted tips shown after the steps, e.g. "Set your griddle to medium heat (~400F)".
+      - name: photos
+        label: Step photos
+        type: object
+        fields:
+          - name: plan
+            label: Planning photos (ingredients)
+            type: image
+            options:
+              media: photos
+              path: img/recipe
+              rename: safe
+              multiple:
+                max: 6
+          - name: prep
+            label: Preparation photos
+            type: image
+            options:
+              media: photos
+              path: img/recipe
+              rename: safe
+              multiple:
+                max: 6
+          - name: performance
+            label: Performance photos (on the griddle)
+            type: image
+            options:
+              media: photos
+              path: img/recipe
+              rename: safe
+              multiple:
+                max: 6
+      - name: unlisted
+        label: Hide from recipe lists
+        type: boolean
+        description: The page still works by its link, but it won't appear on the home page or recipe list.
+      - name: body
+        label: "Performance: cooking on the griddle"
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: newsletters
+    label: Newsletters
+    type: collection
+    path: src/content/newsletters
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, published]
+      primary: title
+      sort: [published]
+      default:
+        sort: published
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: e.g. "June 2023 Newsletter".
+      - name: published
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: pdf
+        label: Newsletter PDF
+        type: file
+        required: true
+        options:
+          media: newsletters
+          extensions: [pdf]
+      - name: cover
+        label: Cover image
+        type: image
+        required: true
+        description: A screenshot of the newsletter's first page.
+        options:
+          media: photos
+          path: img/blog
+          rename: safe
+      - name: body
+        label: Summary
+        type: rich-text
+        options:
+          format: markdown
+
+settings:
+  content:
+    # Keep any frontmatter fields that aren't listed above instead of dropping them.
+    merge: true

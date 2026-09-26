@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 15
 cookMinutes: 12
 totalMinutes: 27
-hero: "../../../img/recipe/chicken_schnitzel/schintzel_fin.jpg"
+hero: "/img/recipe/chicken_schnitzel/schintzel_fin.jpg"
 ingredients:
   - heading: "Chicken"
     items:
@@ -30,8 +30,8 @@ steps:
       - "For sauce, combine honey mustard and beer in a bowl, stir until smooth."
       - "Dredge chicken in flour/bread crumb mixture and place on wire rack.."
 photos:
-  plan: ["../../../img/recipe/chicken_schnitzel/schnitzel_plan.jpg"]
-  prep: ["../../../img/recipe/chicken_schnitzel/schnitzel_prep.jpg"]
+  plan: ["/img/recipe/chicken_schnitzel/schnitzel_plan.jpg"]
+  prep: ["/img/recipe/chicken_schnitzel/schnitzel_prep.jpg"]
   performance: []
 ---
 

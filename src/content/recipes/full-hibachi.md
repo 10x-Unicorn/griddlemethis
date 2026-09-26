@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 40
 cookMinutes: 20
 totalMinutes: 60
-hero: "../../../img/recipe/Full_Hibachi_Dinner/hibachi_fin.jpeg"
+hero: "/img/recipe/Full_Hibachi_Dinner/hibachi_fin.jpeg"
 ingredients:
   - heading: "Fried Rice:"
     items:
@@ -50,8 +50,8 @@ steps:
       - "Take all of this stuff out to your griddle, it is a lot, plus minced garlic, ginger, butter, reduced sodium soy sauce and teriyaki sauce."
       - "Make sure you have plenty of half sheet trays (I use 6-8 trays)"
 photos:
-  plan: ["../../../img/recipe/Full_Hibachi_Dinner/hibachi_plan.jpg"]
-  prep: ["../../../img/recipe/Full_Hibachi_Dinner/hibachi_grill.jpeg"]
+  plan: ["/img/recipe/Full_Hibachi_Dinner/hibachi_plan.jpg"]
+  prep: ["/img/recipe/Full_Hibachi_Dinner/hibachi_grill.jpeg"]
   performance: []
 ---
 

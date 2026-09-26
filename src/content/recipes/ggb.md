@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 6
 totalMinutes: 11
-hero: "../../../img/recipe/GGB/GGB_tray.jpg"
+hero: "/img/recipe/GGB/GGB_tray.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -27,8 +27,8 @@ steps:
       - "Assemble sauce in 1 qt plastic container, mix well."
       - "Assemble all ingredients into a half sheet tray."
 photos:
-  plan: ["../../../img/recipe/GGB/GGB_Plan.jpg"]
-  prep: ["../../../img/recipe/GGB/GGB_Griddle.jpg"]
+  plan: ["/img/recipe/GGB/GGB_Plan.jpg"]
+  prep: ["/img/recipe/GGB/GGB_Griddle.jpg"]
   performance: []
 ---
 

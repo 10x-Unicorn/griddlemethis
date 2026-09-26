@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 30
 cookMinutes: 10
 totalMinutes: 40
-hero: "../../../img/recipe/mongolian_beef/mongolian_beef_fin2.jpg"
+hero: "/img/recipe/mongolian_beef/mongolian_beef_fin2.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -36,8 +36,8 @@ steps:
       - "Add beef to a large freezer bag along with 1 tablespoon soy sauce. Toss to evenly coat. Add ¼ cup cornstarch and toss to evenly coat. Let sit at room temperature 30-60 minutes. Then spread onto a flat sheet."
       - "Whisk the sauce ingredients together in a small bowl. I use a Pyrex 2 cup measuring cup."
 photos:
-  plan: ["../../../img/recipe/mongolian_beef/mongolian_beef_plan.jpg"]
-  prep: ["../../../img/recipe/mongolian_beef/mongolian_beef_prep.jpg"]
+  plan: ["/img/recipe/mongolian_beef/mongolian_beef_plan.jpg"]
+  prep: ["/img/recipe/mongolian_beef/mongolian_beef_prep.jpg"]
   performance: []
 ---
 

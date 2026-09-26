@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 2
 cookMinutes: 6
 totalMinutes: 8
-hero: "../../../img/recipe/chickpea_snack/chickpea_fin.jpg"
+hero: "/img/recipe/chickpea_snack/chickpea_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -26,8 +26,8 @@ steps:
       - "Drain and dry canned chickpeas into a bowl (4 minutes)."
       - "Add spices except lemon juice salt and pepper."
 photos:
-  plan: ["../../../img/recipe/chickpea_snack/chickpea_plan.jpg"]
-  prep: ["../../../img/recipe/chickpea_snack/chickpea_prep.jpg"]
+  plan: ["/img/recipe/chickpea_snack/chickpea_plan.jpg"]
+  prep: ["/img/recipe/chickpea_snack/chickpea_prep.jpg"]
   performance: []
 ---
 

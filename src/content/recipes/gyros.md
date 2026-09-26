@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 20
 cookMinutes: 10
 totalMinutes: 30
-hero: "../../../img/recipe/gyro/gyro_fin.jpg"
+hero: "/img/recipe/gyro/gyro_fin.jpg"
 ingredients:
   - heading: "Tzatziki"
     items:
@@ -46,8 +46,8 @@ steps:
       - "Make small 3 ounce balls."
       - "Press balls in thin patties about ¼ inch thick."
 photos:
-  plan: ["../../../img/recipe/gyro/gyro_tzatziki.jpg", "../../../img/recipe/gyro/gyro_meat.jpg"]
-  prep: ["../../../img/recipe/gyro/gyro_griddle.jpg"]
+  plan: ["/img/recipe/gyro/gyro_tzatziki.jpg", "/img/recipe/gyro/gyro_meat.jpg"]
+  prep: ["/img/recipe/gyro/gyro_griddle.jpg"]
   performance: []
 ---
 

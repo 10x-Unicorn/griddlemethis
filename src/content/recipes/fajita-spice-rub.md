@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 0
 totalMinutes: 5
-hero: "../../../img/recipe/Fajita_Spice/Fin.jpg"
+hero: "/img/recipe/Fajita_Spice/Fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -26,8 +26,8 @@ steps:
       - "Stir to mix."
       - "Place in a storage container, preferably a shaker."
 photos:
-  plan: ["../../../img/recipe/Fajita_Spice/plan.jpg"]
-  prep: ["../../../img/recipe/Fajita_Spice/Fin.jpg"]
+  plan: ["/img/recipe/Fajita_Spice/plan.jpg"]
+  prep: ["/img/recipe/Fajita_Spice/Fin.jpg"]
   performance: []
 ---
 

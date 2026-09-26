@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 20
 cookMinutes: 20
 totalMinutes: 40
-hero: "../../../img/recipe/croque_madame/croque_fin.jpg"
+hero: "/img/recipe/croque_madame/croque_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -31,8 +31,8 @@ steps:
       - "Whisk mustard and raspberry preserves in a small bowl if desired. (I do)."
       - "Prep griddle to medium high heat (400 F). Preheat oven to 425° F. Line a baking sheet with parchment paper and set aside."
 photos:
-  plan: ["../../../img/recipe/croque_madame/croque_plan.jpg"]
-  prep: ["../../../img/recipe/croque_madame/croque_prep.jpg", "../../../img/recipe/croque_madame/croque_perf.jpg"]
+  plan: ["/img/recipe/croque_madame/croque_plan.jpg"]
+  prep: ["/img/recipe/croque_madame/croque_prep.jpg", "/img/recipe/croque_madame/croque_perf.jpg"]
   performance: []
 ---
 

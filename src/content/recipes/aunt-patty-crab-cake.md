@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 20
 cookMinutes: 10
 totalMinutes: 30
-hero: "../../../img/recipe/Aunt_Pattys_Crab_Cake/apcc_fin.jpg"
+hero: "/img/recipe/Aunt_Pattys_Crab_Cake/apcc_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -27,8 +27,8 @@ steps:
       - "Refrigerate for at least 10 minutes."
 prepNotes: ["Set your griddle to medium heat (~400)"]
 photos:
-  plan: ["../../../img/recipe/Aunt_Pattys_Crab_Cake/apcc_plan.jpg"]
-  prep: ["../../../img/recipe/Aunt_Pattys_Crab_Cake/apcc_prep.jpg"]
+  plan: ["/img/recipe/Aunt_Pattys_Crab_Cake/apcc_plan.jpg"]
+  prep: ["/img/recipe/Aunt_Pattys_Crab_Cake/apcc_prep.jpg"]
   performance: []
 ---
 

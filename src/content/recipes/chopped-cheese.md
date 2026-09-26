@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 20
 cookMinutes: 20
 totalMinutes: 40
-hero: "../../../img/recipe/Chopped_Cheese/Chopped_Cheese_fin2.jpg"
+hero: "/img/recipe/Chopped_Cheese/Chopped_Cheese_fin2.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -28,8 +28,8 @@ steps:
       - "Prep GMTD Not so secret Sauce. (I do)"
 prepNotes: ["Set your griddle to medium heat (~400F)"]
 photos:
-  plan: ["../../../img/recipe/Chopped_Cheese/Chopped_Cheese_Plan.jpg"]
-  prep: ["../../../img/recipe/Chopped_Cheese/Chopped_Cheese_prep.jpg"]
+  plan: ["/img/recipe/Chopped_Cheese/Chopped_Cheese_Plan.jpg"]
+  prep: ["/img/recipe/Chopped_Cheese/Chopped_Cheese_prep.jpg"]
   performance: []
 ---
 

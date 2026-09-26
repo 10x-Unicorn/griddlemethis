@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 7
 cookMinutes: 8
 totalMinutes: 15
-hero: "../../../img/recipe/Honey_Sriracha_Shrimp/honey_sriracha_shrimp_fin.JPEG"
+hero: "/img/recipe/Honey_Sriracha_Shrimp/honey_sriracha_shrimp_fin.JPEG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -27,8 +27,8 @@ steps:
       - "Heat for 30 secs in the microwave an mix again."
       - "Place your shrimp on a sheet tray. rinsed and dried."
 photos:
-  plan: ["../../../img/recipe/Honey_Sriracha_Shrimp/honey_sriracha_shirmp_plan.JPEG"]
-  prep: ["../../../img/recipe/Honey_Sriracha_Shrimp/honey_sriracha_shrimp_prep.jpg"]
+  plan: ["/img/recipe/Honey_Sriracha_Shrimp/honey_sriracha_shirmp_plan.JPEG"]
+  prep: ["/img/recipe/Honey_Sriracha_Shrimp/honey_sriracha_shrimp_prep.jpg"]
   performance: []
 ---
 

@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 40
 cookMinutes: 20
 totalMinutes: 60
-hero: "../../../img/recipe/chicken_marsala/chicken_marsala_fin.jpg"
+hero: "/img/recipe/chicken_marsala/chicken_marsala_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -32,9 +32,9 @@ steps:
       - "Dip fillets in flour/breadcrumbs/granulated garlic mixture and place on wire rack till ready to griddle."
 prepNotes: ["Set your griddle to medium heat (~400F)"]
 photos:
-  plan: ["../../../img/recipe/chicken_marsala/chicken_marsala_ingred.jpg"]
-  prep: ["../../../img/recipe/chicken_marsala/chicken_marsala_prep1.jpg", "../../../img/recipe/chicken_marsala/chicken_marsala_prep2.jpg"]
-  performance: ["../../../img/recipe/chicken_marsala/chicken_marsala_griddle.jpg"]
+  plan: ["/img/recipe/chicken_marsala/chicken_marsala_ingred.jpg"]
+  prep: ["/img/recipe/chicken_marsala/chicken_marsala_prep1.jpg", "/img/recipe/chicken_marsala/chicken_marsala_prep2.jpg"]
+  performance: ["/img/recipe/chicken_marsala/chicken_marsala_griddle.jpg"]
 ---
 
 Coat griddle with 2 tbsp of olive oil, spreading evenly, add breaded fillets. Flip after 4 min. Flip again (8 mins total). Return to sheet tray. You can freeze the griddled fillets if you have extra for future meal at this point.

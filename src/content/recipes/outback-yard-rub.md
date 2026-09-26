@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 0
 totalMinutes: 5
-hero: "../../../img/recipe/Aunt_Pattys_Crab_Cake/apcc_fin.jpg"
+hero: "/img/recipe/Aunt_Pattys_Crab_Cake/apcc_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -24,8 +24,8 @@ steps:
       - "Stir to mix."
       - "Place in a storage container, preferably a shaker."
 photos:
-  plan: ["../../../img/recipe/outback_yard_rub/outback_yard_rub_plan.jpg"]
-  prep: ["../../../img/recipe/outback_yard_rub/outback_yard_rub_prep.jpg"]
+  plan: ["/img/recipe/outback_yard_rub/outback_yard_rub_plan.jpg"]
+  prep: ["/img/recipe/outback_yard_rub/outback_yard_rub_prep.jpg"]
   performance: []
 ---
 

@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 30
 cookMinutes: 25
 totalMinutes: 55
-hero: "../../../img/recipe/Butter_Chicken/butter_chicken_fin.JPG"
+hero: "/img/recipe/Butter_Chicken/butter_chicken_fin.JPG"
 ingredients:
   - heading: "Marinade"
     items:
@@ -47,9 +47,9 @@ steps:
       - "Add salsa, chili powder and salt. Let simmer for about 10-15 minutes, stirring occasionally until sauce thickens and becomes a deep reddish-brown color."
       - "Stir the Half & Half, sugar, and 1 Oz butter through the sauce."
 photos:
-  plan: ["../../../img/recipe/Butter_Chicken/butter_chicken_plan.JPG"]
-  prep: ["../../../img/recipe/Butter_Chicken/butter_chicken_prep.JPG"]
-  performance: ["../../../img/recipe/Butter_Chicken/butter_chicken_perf.JPG"]
+  plan: ["/img/recipe/Butter_Chicken/butter_chicken_plan.JPG"]
+  prep: ["/img/recipe/Butter_Chicken/butter_chicken_prep.JPG"]
+  performance: ["/img/recipe/Butter_Chicken/butter_chicken_perf.JPG"]
 ---
 
 Have griddle medium hot, like 400F, make sure surface is coated with oil. Place chicken on griddle ensuring all chicken in flat on griddle to maximize sear. Sear for 3 minutes per side, add oil in between Flip every 3 min till cooked through, about 12 min, less if you slice thinner, more if you sliced thicker. Move to half sheet tray. Add griddled chicken to the Dutch Oven. Cook for an additional 8-10 minutes until chicken is cooked through and the sauce is thick and bubbling. Add 1 Oz of butter to sauce prior to serving to add thickness. Serve with white rice and Naan bread.

@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 10
 totalMinutes: 15
-hero: "../../../img/recipe/onion_cornbread/Onion_Cornbread_Fin.JPG"
+hero: "/img/recipe/onion_cornbread/Onion_Cornbread_Fin.JPG"
 ingredients:
   - heading: "Onion Cornbread"
     items:
@@ -31,8 +31,8 @@ steps:
       - "Beat egg in bowl add milk then corn muffin mix, add onions and jalapeños."
       - "Stir to combine into a thick batter."
 photos:
-  plan: ["../../../img/recipe/onion_cornbread/Onion_Cornbread_Plan.jpeg"]
-  prep: ["../../../img/recipe/onion_cornbread/Onion_Cornbread_Prep.JPG"]
+  plan: ["/img/recipe/onion_cornbread/Onion_Cornbread_Plan.jpeg"]
+  prep: ["/img/recipe/onion_cornbread/Onion_Cornbread_Prep.JPG"]
   performance: []
 ---
 

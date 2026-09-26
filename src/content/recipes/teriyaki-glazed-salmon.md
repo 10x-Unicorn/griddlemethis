@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 35
 cookMinutes: 10
 totalMinutes: 45
-hero: "../../../img/recipe/teriyaki_glazed_salmon/Salmon_Final.JPG"
+hero: "/img/recipe/teriyaki_glazed_salmon/Salmon_Final.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -28,8 +28,8 @@ steps:
       - "Pour half of the marinade in a small saucepan. Add the salmon to the bowl with the remaining marinade, flesh-side down. Marinate for at least 30 minutes."
       - "In a small saucepan, bring to boil, add bloomed cornstarch and sugar while constantly mixing. Lower heat as liquid thickens to produce the final glaze."
 photos:
-  plan: ["../../../img/recipe/teriyaki_glazed_salmon/Salmon_Plan.JPG"]
-  prep: ["../../../img/recipe/teriyaki_glazed_salmon/Salmon_Prep.JPG"]
+  plan: ["/img/recipe/teriyaki_glazed_salmon/Salmon_Plan.JPG"]
+  prep: ["/img/recipe/teriyaki_glazed_salmon/Salmon_Prep.JPG"]
   performance: []
 ---
 

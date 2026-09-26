@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 0
 totalMinutes: 5
-hero: "../../../img/recipe/GMTD_NSSS/NSSS_plan.jpg"
+hero: "/img/recipe/GMTD_NSSS/NSSS_plan.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -22,8 +22,8 @@ steps:
     items:
       - "Add ingredients to bowl"
 photos:
-  plan: ["../../../img/recipe/GMTD_NSSS/NSSS_plan.jpg"]
-  prep: ["../../../img/recipe/GMTD_NSSS/NSSS_Prep.jpg"]
+  plan: ["/img/recipe/GMTD_NSSS/NSSS_plan.jpg"]
+  prep: ["/img/recipe/GMTD_NSSS/NSSS_Prep.jpg"]
   performance: []
 ---
 

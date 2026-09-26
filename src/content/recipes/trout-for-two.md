@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 30
 cookMinutes: 10
 totalMinutes: 40
-hero: "../../../img/recipe/trout_for_two/trout_fin.JPG"
+hero: "/img/recipe/trout_for_two/trout_fin.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -27,9 +27,9 @@ steps:
       - "Slice lemon in half"
 prepNotes: ["Set your griddle to medium heat (~400F)"]
 photos:
-  plan: ["../../../img/recipe/trout_for_two/trout_plan.JPG"]
-  prep: ["../../../img/recipe/trout_for_two/trout_prep1.JPG", "../../../img/recipe/trout_for_two/trout_prep2.JPG"]
-  performance: ["../../../img/recipe/trout_for_two/trout_perf.JPG"]
+  plan: ["/img/recipe/trout_for_two/trout_plan.JPG"]
+  prep: ["/img/recipe/trout_for_two/trout_prep1.JPG", "/img/recipe/trout_for_two/trout_prep2.JPG"]
+  performance: ["/img/recipe/trout_for_two/trout_perf.JPG"]
 ---
 
 Melt 2 tbsp of butter on griddle, spreading evenly, add potatoes, brussels, trout (skin side up), and cut lemons flat side down. Season everything with the garlic. Flip all but lemons, add salt and pepper, last 2 TBS of butter and squeeze lemons over top. Return to sheet tray.

@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 10
 totalMinutes: 20
-hero: "../../../img/recipe/pumpkin_whoopie_pie/PWP_Fin.JPG"
+hero: "/img/recipe/pumpkin_whoopie_pie/PWP_Fin.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -26,8 +26,8 @@ steps:
       - "In large bowl, gently whisk all ingredients until just combined."
       - "Let batter sit for at least 3-5 min."
 photos:
-  plan: ["../../../img/recipe/pumpkin_whoopie_pie/PWP_Plan.JPG"]
-  prep: ["../../../img/recipe/pumpkin_whoopie_pie/PWP_Prep.JPG"]
+  plan: ["/img/recipe/pumpkin_whoopie_pie/PWP_Plan.JPG"]
+  prep: ["/img/recipe/pumpkin_whoopie_pie/PWP_Prep.JPG"]
   performance: []
 ---
 

@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 40
 cookMinutes: 20
 totalMinutes: 60
-hero: "../../../img/recipe/smashed_meatballs/sm_fin.jpg"
+hero: "/img/recipe/smashed_meatballs/sm_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -30,9 +30,9 @@ steps:
       - "You can cover these meatballs and refrigerate up to a day to let flavors meld, or not."
 prepNotes: ["Set your griddle to medium heat (~400F)"]
 photos:
-  plan: ["../../../img/recipe/smashed_meatballs/sm_ingred.jpg"]
-  prep: ["../../../img/recipe/smashed_meatballs/sm_prep1.jpg", "../../../img/recipe/smashed_meatballs/sm_prep2.jpg", "../../../img/recipe/smashed_meatballs/sm_prep3.jpg", "../../../img/recipe/smashed_meatballs/sm_prep4.jpg"]
-  performance: ["../../../img/recipe/smashed_meatballs/sm_griddle.jpg"]
+  plan: ["/img/recipe/smashed_meatballs/sm_ingred.jpg"]
+  prep: ["/img/recipe/smashed_meatballs/sm_prep1.jpg", "/img/recipe/smashed_meatballs/sm_prep2.jpg", "/img/recipe/smashed_meatballs/sm_prep3.jpg", "/img/recipe/smashed_meatballs/sm_prep4.jpg"]
+  performance: ["/img/recipe/smashed_meatballs/sm_griddle.jpg"]
 ---
 
 Coat griddle with 2 tbsp of olive oil, spreading evenly, add meatballs. I use a baking sheet with griddle press to gently smash meatballs and improve sear. Flip after 3 min and smash. Flip again smash, try to get all sides (6 sides on a cube, 18 mins total). Return to sheet tray.

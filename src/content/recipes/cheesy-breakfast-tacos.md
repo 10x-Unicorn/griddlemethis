@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 5
 cookMinutes: 15
 totalMinutes: 20
-hero: "../../../img/recipe/cheesy_breakfast_tacos/cheesy_breakfast_taco_fin.JPG"
+hero: "/img/recipe/cheesy_breakfast_tacos/cheesy_breakfast_taco_fin.JPG"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -27,8 +27,8 @@ steps:
       - "Combine cheeses together to make blend"
       - "Divide sausage into 8-12 patties"
 photos:
-  plan: ["../../../img/recipe/cheesy_breakfast_tacos/cheesy_breakfast_taco_plan.JPG"]
-  prep: ["../../../img/recipe/cheesy_breakfast_tacos/cheesy_breakfast_taco_prep.JPG"]
+  plan: ["/img/recipe/cheesy_breakfast_tacos/cheesy_breakfast_taco_plan.JPG"]
+  prep: ["/img/recipe/cheesy_breakfast_tacos/cheesy_breakfast_taco_prep.JPG"]
   performance: []
 ---
 

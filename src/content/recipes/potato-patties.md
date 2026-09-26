@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 10
 cookMinutes: 16
 totalMinutes: 26
-hero: "../../../img/recipe/chicken_schnitzel/schintzel_fin.jpg"
+hero: "/img/recipe/chicken_schnitzel/schintzel_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -25,8 +25,8 @@ steps:
       - "In a large bowl, combine all ingredients. Mix thoroughly."
       - "Form into round flat patties, using a 1/3 cup of mixture per patty. Makes 12-14."
 photos:
-  plan: ["../../../img/recipe/potato_patties/potato_patties_plan.jpg"]
-  prep: ["../../../img/recipe/potato_patties/potato_patties_prep.jpg"]
+  plan: ["/img/recipe/potato_patties/potato_patties_plan.jpg"]
+  prep: ["/img/recipe/potato_patties/potato_patties_prep.jpg"]
   performance: []
 ---
 

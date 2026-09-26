@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 10
 cookMinutes: 0
 totalMinutes: 10
-hero: "../../../img/recipe/pb_protein_bite/61815379824__7B716B49-4812-4DCB-AEDD-5C7DA34E5999.jpeg"
+hero: "/img/recipe/pb_protein_bite/61815379824__7B716B49-4812-4DCB-AEDD-5C7DA34E5999.jpeg"
 ingredients:
   - heading: "Ingredients:"
     items:
@@ -26,8 +26,8 @@ steps:
       - "- Add syrup and creamer, mix until you can form into balls. Add more creamer if mixture is too dry"
       - "- Add chocolate chips, form into balls"
 photos:
-  plan: ["../../../img/recipe/pb_protein_bite/IMG_0205.jpeg"]
-  prep: ["../../../img/recipe/pb_protein_bite/IMG_0206.jpeg"]
+  plan: ["/img/recipe/pb_protein_bite/IMG_0205.jpeg"]
+  prep: ["/img/recipe/pb_protein_bite/IMG_0206.jpeg"]
   performance: []
 ---
 

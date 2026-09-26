@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 15
 cookMinutes: 10
 totalMinutes: 30
-hero: "../../../img/recipe/French_Toast/FrenchToastFin.jpg"
+hero: "/img/recipe/French_Toast/FrenchToastFin.jpg"
 ingredients:
   - heading: "For French Toast"
     items:
@@ -34,8 +34,8 @@ steps:
       - "- Slice apples into rings with mandolin slicer to about 1/4 inch thick. Place in half sheet tray"
       - "- Sprinkle cinnamon and brown sugar over apples, stir to combine"
 photos:
-  plan: ["../../../img/recipe/French_Toast/FrenchToastIngredients.png"]
-  prep: ["../../../img/recipe/French_Toast/FrenchToastPrep.jpg"]
+  plan: ["/img/recipe/French_Toast/FrenchToastIngredients.png"]
+  prep: ["/img/recipe/French_Toast/FrenchToastPrep.jpg"]
   performance: []
 ---
 

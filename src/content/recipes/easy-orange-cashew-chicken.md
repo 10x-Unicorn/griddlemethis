@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 10
 cookMinutes: 12
 totalMinutes: 27
-hero: "../../../img/recipe/easy_orange_cashew_chicken/IMG_0237.jpg"
+hero: "/img/recipe/easy_orange_cashew_chicken/IMG_0237.jpg"
 ingredients:
   - heading: "Ingredients:"
     items:
@@ -29,8 +29,8 @@ steps:
       - "Dice chicken"
       - "Mix sauce in pourable 1 quart container. You will want to save the extra, yum"
 photos:
-  plan: ["../../../img/recipe/easy_orange_cashew_chicken/IMG_0229.jpg"]
-  prep: ["../../../img/recipe/easy_orange_cashew_chicken/IMG_0230.jpg"]
+  plan: ["/img/recipe/easy_orange_cashew_chicken/IMG_0229.jpg"]
+  prep: ["/img/recipe/easy_orange_cashew_chicken/IMG_0230.jpg"]
   performance: []
 ---
 

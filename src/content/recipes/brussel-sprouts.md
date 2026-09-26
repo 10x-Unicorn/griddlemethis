@@ -8,7 +8,7 @@ rating: 5
 prepMinutes: 9
 cookMinutes: 6
 totalMinutes: 15
-hero: "../../../img/recipe/brussel_sprouts/bacon_brussel_fin.jpg"
+hero: "/img/recipe/brussel_sprouts/bacon_brussel_fin.jpg"
 ingredients:
   - heading: "Ingredients"
     items:
@@ -24,8 +24,8 @@ steps:
       - "Slice each Sprout in half so you have one flat side."
       - "Assemble all ingredients to sheet tray."
 photos:
-  plan: ["../../../img/recipe/brussel_sprouts/Bacon_brusselI_plan.jpg"]
-  prep: ["../../../img/recipe/brussel_sprouts/Bacon_brussel_prep.jpg"]
+  plan: ["/img/recipe/brussel_sprouts/Bacon_brusselI_plan.jpg"]
+  prep: ["/img/recipe/brussel_sprouts/Bacon_brussel_prep.jpg"]
   performance: []
 ---
 
