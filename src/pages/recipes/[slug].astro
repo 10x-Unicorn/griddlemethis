@@ -36,7 +36,7 @@ const jsonLd = {
 };
 ---
 
-<Base title={r.title} description={r.description}>
+<Base title={r.title} description={r.description} image={r.hero} imageAlt={r.title} type="article">
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
   <article>
