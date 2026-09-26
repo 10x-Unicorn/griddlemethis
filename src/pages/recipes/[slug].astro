@@ -1,0 +1,204 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { formatMinutes, isoDuration } from '../../lib/recipes';
+
+export async function getStaticPaths() {
+  const recipes = await getCollection('recipes');
+  return recipes.map((recipe) => ({ params: { slug: recipe.id }, props: { recipe } }));
+}
+
+const { recipe } = Astro.props;
+const r = recipe.data;
+const { Content } = await render(recipe);
+
+// Continue step numbering across groups (e.g. "Sauce" then "Chicken").
+const stepStarts = r.steps.map((_, i) => 1 + r.steps.slice(0, i).reduce((n, g) => n + g.items.length, 0));
+const photoSizes = '(min-width: 1120px) 240px, (min-width: 640px) 33vw, 100vw';
+
+const heroForSeo = await getImage({ src: r.hero, width: 1200, format: 'jpg' });
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: r.title,
+  description: r.description,
+  image: new URL(heroForSeo.src, Astro.site).href,
+  datePublished: r.published.toISOString().slice(0, 10),
+  recipeCategory: r.category,
+  keywords: r.tags.join(', '),
+  prepTime: r.prepMinutes ? isoDuration(r.prepMinutes) : undefined,
+  cookTime: r.cookMinutes ? isoDuration(r.cookMinutes) : undefined,
+  totalTime: isoDuration(r.totalMinutes),
+  recipeIngredient: r.ingredients.flatMap((g) => g.items),
+  recipeInstructions: r.steps.flatMap((g) => g.items).map((text) => ({ '@type': 'HowToStep', text })),
+};
+---
+
+<Base title={r.title} description={r.description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <article>
+    <header class="recipe-hero container">
+      <div>
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="/recipes/">Recipes</a> / <a href={`/recipes/#${r.category.toLowerCase()}`}>{r.category}</a>
+        </nav>
+        <h1>{r.title}</h1>
+        <p class="lede">{r.description}</p>
+        <dl class="recipe-meta">
+          {
+            r.prepMinutes !== undefined && (
+              <div>
+                <dt>Prep</dt>
+                <dd>{formatMinutes(r.prepMinutes)}</dd>
+              </div>
+            )
+          }
+          {
+            r.cookMinutes !== undefined && (
+              <div>
+                <dt>Cook</dt>
+                <dd>{formatMinutes(r.cookMinutes)}</dd>
+              </div>
+            )
+          }
+          <div>
+            <dt>Ready in</dt>
+            <dd>{formatMinutes(r.totalMinutes)}</dd>
+          </div>
+          {
+            r.rating && (
+              <div>
+                <dt>Rating</dt>
+                <dd>
+                  <span class="stars" role="img" aria-label={`${r.rating} out of 5`}>
+                    {Array.from({ length: r.rating }, () => (
+                      <Icon name="star" size={18} />
+                    ))}
+                  </span>
+                </dd>
+              </div>
+            )
+          }
+        </dl>
+        {
+          r.tags.length > 0 && (
+            <ul class="tags" aria-label="Tags">
+              {r.tags.map((t) => (
+                <li>{t}</li>
+              ))}
+            </ul>
+          )
+        }
+        <div class="actions">
+          <a class="btn" href="#recipe">Jump to recipe</a>
+          <button class="btn btn--ghost" type="button" data-print><Icon name="print" /> Print</button>
+        </div>
+      </div>
+      <div class="recipe-hero__img">
+        <Image
+          src={r.hero}
+          alt={r.title}
+          width={1200}
+          height={900}
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 1120px) 580px, (min-width: 860px) 52vw, 100vw"
+          fit="cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </header>
+
+    <div id="recipe" class="recipe-body container">
+      <aside class="panel">
+        <h2><span class="section-num">01</span> Planning</h2>
+        {
+          r.ingredients.map((group) => (
+            <>
+              {group.heading && <h3 class="group-title">{group.heading}</h3>}
+              <ul class="ingredients">
+                {group.items.map((item) => (
+                  <li>
+                    <label>
+                      <input type="checkbox" />
+                      <span>{item}</span>
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ))
+        }
+        {
+          r.photos.plan.length > 0 && (
+            <div class="photo-row">
+              {r.photos.plan.map((src) => (
+                <Image src={src} alt={`${r.title} ingredients`} width={800} widths={[400, 800]} sizes="340px" />
+              ))}
+            </div>
+          )
+        }
+      </aside>
+
+      <div class="method">
+        <section>
+          <h2><span class="section-num">02</span> Preparation</h2>
+          {
+            r.steps.map((group, i) => (
+              <>
+                {group.heading && <h3 class="group-title">{group.heading}</h3>}
+                <ol class="steps" start={stepStarts[i]}>
+                  {group.items.map((item, j) => (
+                    <li>
+                      <span class="step-num" aria-hidden="true">
+                        {stepStarts[i] + j}
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ol>
+              </>
+            ))
+          }
+          {r.prepNotes.map((note) => <p class="callout">{note}</p>)}
+          {
+            r.photos.prep.length > 0 && (
+              <div class="photo-row">
+                {r.photos.prep.map((src) => (
+                  <Image src={src} alt={`Preparing ${r.title}`} width={800} widths={[400, 800]} sizes={photoSizes} />
+                ))}
+              </div>
+            )
+          }
+        </section>
+
+        <section>
+          <h2><span class="section-num">03</span> Performance</h2>
+          <div class="prose">
+            <Content />
+          </div>
+          {
+            r.photos.performance.length > 0 && (
+              <div class="photo-row">
+                {r.photos.performance.map((src) => (
+                  <Image src={src} alt={`${r.title} on the griddle`} width={800} widths={[400, 800]} sizes={photoSizes} />
+                ))}
+              </div>
+            )
+          }
+        </section>
+      </div>
+    </div>
+
+    <div class="container back-link">
+      <a class="link-arrow" href="/recipes/"><Icon name="back" /> All recipes</a>
+    </div>
+  </article>
+
+  <script slot="scripts">
+    document.querySelector('[data-print]')?.addEventListener('click', () => window.print());
+  </script>
+</Base>

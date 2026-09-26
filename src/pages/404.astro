@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<Base title="Page not found">
+  <PageHead title="Nothing on the griddle here" eyebrow="404">
+    <p class="lede">That page doesn’t exist, but there’s plenty more to cook.</p>
+    <p style="padding-bottom: 88px"><a class="btn" href="/recipes/">Browse recipes <Icon name="arrow" /></a></p>
+  </PageHead>
+</Base>

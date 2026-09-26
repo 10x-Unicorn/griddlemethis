@@ -1,0 +1,139 @@
+---
+import '../styles/site.css';
+import { Image } from 'astro:assets';
+import Icon from '../components/Icon.astro';
+import logo from '../assets/logo.png';
+import unicornLogo from '../assets/10xunicorn.png';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Show the Algolia search stylesheet (the box itself is placed by the page). */
+  search?: boolean;
+}
+
+const { title, description = 'Griddle Me This, Dad? Recipes from the backyard griddle.', search = false } = Astro.props;
+const fullTitle = title === 'Home' ? 'Griddle Me This, Dad?' : `${title} | Griddle Me This, Dad?`;
+const nav = [
+  ['/recipes/', 'Recipes'],
+  ['/newsletters/', 'Newsletters'],
+  ['/about/', 'About'],
+  ['/contact/', 'Contact'],
+];
+const current = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta name="theme-color" content="#0c0a09" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {
+      search && (
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
+        />
+      )
+    }
+    <slot name="head" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="/" aria-label="Griddle Me This, Dad? home">
+          <Image src={logo} alt="" height={128} loading="eager" />
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <ul>
+            {
+              nav.map(([href, label]) => (
+                <li>
+                  <a href={href} aria-current={current.startsWith(href) ? 'page' : undefined}>
+                    {label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        <details class="mobile-nav">
+          <summary aria-label="Menu">
+            <span class="icon-menu"><Icon name="menu" size={26} /></span>
+            <span class="icon-close"><Icon name="close" size={26} /></span>
+          </summary>
+          <ul>
+            <li><a href="/">Home</a></li>
+            {
+              nav.map(([href, label]) => (
+                <li>
+                  <a href={href}>{label}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </details>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h2>Griddle Me This, Dad?</h2>
+            <p>Recipes, tips and monthly newsletters from a dad who took his cooking out to the backyard griddle.</p>
+            <ul>
+              <li><a href="https://www.pinterest.com/williampickrel/">Pinterest</a></li>
+              <li><a href="mailto:griddlemethisdad@gmail.com">griddlemethisdad@gmail.com</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Explore</h2>
+            <ul>
+              <li><a href="/">Home</a></li>
+              {
+                nav.map(([href, label]) => (
+                  <li>
+                    <a href={href}>{label}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div>
+            <h2>Get new recipes by email</h2>
+            <p>We’ll let you know when a new recipe goes up.</p>
+            <form class="subscribe" name="email_subscriber" method="POST" data-netlify="true">
+              <label class="visually-hidden" for="emailSub">Email address</label>
+              <input class="input" id="emailSub" name="emailSub" type="email" required placeholder="you@example.com" />
+              <button class="btn" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© {new Date().getFullYear()} Griddle Me This, Dad?</span>
+          <a class="made-by" href="https://github.com/10x-Unicorn">
+            <span>Created and designed by 10xUnicorn</span>
+            <Image src={unicornLogo} alt="10xUnicorn" height={96} />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <slot name="scripts" />
+  </body>
+</html>
+

@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<Base title="Contact" description="Send your thoughts and recipe ideas to Griddle Me This, Dad?">
+  <PageHead title="Get in touch" eyebrow="Contact">
+    <p class="lede">Questions, recipe ideas, or a griddle win to share? Send them over anytime.</p>
+  </PageHead>
+  <div class="container contact" style="padding-top: 32px">
+    <!-- Handled by Netlify Forms; submissions show up in the Netlify dashboard. -->
+    <form class="form panel" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input class="input" id="name" name="name" type="text" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input class="input" id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="subject">Subject</label>
+        <input class="input" id="subject" name="subject" type="text" />
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea class="input" id="message" name="message" required></textarea>
+      </div>
+      <div>
+        <button class="btn" type="submit">Send message</button>
+      </div>
+    </form>
+    <div>
+      <h2>Prefer email?</h2>
+      <p>
+        <a class="link-arrow" href="mailto:griddlemethisdad@gmail.com"><Icon name="mail" /> griddlemethisdad@gmail.com</a>
+      </p>
+    </div>
+  </div>
+</Base>

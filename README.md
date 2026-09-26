@@ -2,86 +2,75 @@
 A modern cookbook website dedicated to griddling.
 
 ## Infrastructure
-This site is basic HTML/CSS coding modified from this [template](https://colorlib.com/wp/template/tasty-recipes/) 
-via [Colorlib](https://colorlib.com).
-
-### File Structure
-Helpful files/directories are as follows:
-- The original style guide can be find at `./220 Testy Recipes DOC`.
-- The `css/fonts` folders are self-explanatory 
-- The `img` folder contains two integral folders:
-  1. `blog` where all the thumbnails for the newletters are kept
-  1. `recipe` where all recipe folders are keep under `recipe_name/recipe_pics.jpg`
-- The `newsletters` folder holds all newletter pdf's
-- All web pages (.html) are found at the repository root.
+### Stack
+The site is built with [Astro](https://astro.build) and deployed on [Netlify](https://www.netlify.com/), which
+runs `npm run build` on every push and serves the `dist/` folder. All styling lives in `src/styles/site.css`
+(the dark charcoal-and-flame palette and the fonts are defined as variables at the top).
 
 ```
-├── 220 Testy Recipe Docs
-├── css
-├── fonts
-├── img
-│   ├── blog
-│   │   ├── Newletter_GMTD*.png
-│   ├── recipe
-│   │   ├── */*.jpg
-├── newletters
-│   ├── GMTD Newletter *.pdf
-├── *.html
-└── README.md
+├── img/                     original photos (resized/compressed automatically at build time)
+├── public/                  files served as-is: favicon, newsletter PDFs, _redirects
+├── src/
+│   ├── content/recipes/     one Markdown file per recipe
+│   ├── content/newsletters/ one Markdown file per newsletter
+│   ├── content.config.ts    the fields every recipe/newsletter must have
+│   ├── layouts/Base.astro   header, footer, <head> (shared by every page)
+│   ├── assets/              logo
+│   ├── components/          recipe card, page header, icons
+│   └── pages/               one file per route
 ```
 
-## Deployment
-The deployment of the site is handled via [Github](https://github.com/) and [Netlify](https://www.netlify.com/).
+### Local development
+Requires Node 22+.
 
-Github provides Internet hosting for software development and version control using Git. It offers the distributed
-version control and source code management functionality of Git, plus its own features. If you found
-this repository you are most likely already on Github.
+```
+npm install
+npm run dev      # live preview at http://localhost:4321
+npm run build    # production build into dist/
+```
 
-Netlify provides hosting for websites whose source files are stored in the version control system Git and then generated 
-into static web content files served via a 
-[Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network).
-Given the limitations of the purely static model, the company later expanded services to include content management 
-systems, and features of serverless computing to handle websites with interactive features 
-(such as email forms in our use case).
- 
 ## Contribution Guide
-### Recipes
-For contributing a recipe one must make a `repice_name.html` page. It is best to copy another webpage for formatting 
-and edit text/pictures. The basic webpage format goes as following:
+Recipes and newsletters can be added through [Pages CMS](https://pagescms.org), a free web editor, without touching
+any code. Editing the Markdown files by hand works too (see [Editing files directly](#editing-files-directly)).
 
-```
-Recipe Info
-Name of recipe, description of said recipe, time to prep, cook, and be ready in.
+### Adding a recipe or newsletter with Pages CMS
+1. Go to [app.pagescms.org](https://app.pagescms.org), sign in with GitHub and open this repository.
+1. Switch to the **`content`** branch in Pages CMS's branch menu, not `master`. See [Why the `content` branch](#why-the-content-branch).
+1. Open **Recipes** (or **Newsletters**) and add a new entry.
+1. Fill in the form and upload photos. Full-size phone photos are fine: the build resizes them, converts them to WebP
+   and strips location (GPS) data.
+1. Save. Each save is a commit to the `content` branch, and Netlify builds a preview of it.
 
-Plan Section
-Picture of ingredients and ingredient list split into sections
+The recipe name becomes the web address: "Smash Burgers" is published at `/recipes/smash-burgers/`. The recipe list,
+the three newest recipes on the home page and search all update automatically from the **Date published** field.
 
-Preparation Section
-Picture of prepping/griddling in action and ordered list of instructions
+### Publishing
+When a batch of changes on `content` is ready, open a pull request from `content` into `master` on GitHub and merge
+it. That publishes everything in one production deploy. Afterwards, bring `content` up to date with `master` before the next
+batch: merge a pull request from `master` into `content`, or run `git merge master` on `content` locally.
 
-Performance Section
-Explaination of what need to be done when griddling
-```
+### Why the `content` branch
+Every save in Pages CMS is a commit, and every commit to `master` is a Netlify production deploy, which counts
+against the free plan's monthly limit (on Netlify's credit-based free plan, 15 of the 300 monthly credits each).
+Deploy previews of other branches are free, so drafting on `content` and merging in batches keeps the site well
+inside the free plan and lets you check changes on the preview before they go live.
 
-Then you must add the recipe to `Recipes.html` again copy another recipe and replacing text/pictures.
-To obtain the circular images we use [GIMP 2.10.20](https://www.gimp.org/news/2020/06/11/gimp-2-10-20-released/) to 
-first open the file then you want to follow these steps:
+### One-time setup
+1. Someone with admin access to the `10x-Unicorn` GitHub organization signs in at
+   [app.pagescms.org](https://app.pagescms.org) and installs the Pages CMS GitHub app on this repository.
+1. Create a `content` branch from `master` (from the branch dropdown on GitHub, or `git push origin master:content`).
+1. Give each editor a GitHub account with write access to the repository.
+1. In Netlify's site settings, turn on branch deploys for `content` so each save gets a preview link.
 
-1. Under the `Layers` doc on the right of the screen, right click your layer and select `Add Alpha Channel`
-1. From the `Toolbox` on the left side of the screen, select the circle tool
-1. Then drag a circle over the portion of the picture you want the thumbnail to sho
-1. `Ctrl+I` to invert your selection and the `DEL` to make it so there only remains a circular image on a
- transparent background
-1. Go to `Image` on the top bar, and select `Crop to Content`
-1. Finally, export your circular image by doing `File->Export As...`
+The editor forms are defined in `.pages.yml`. They mirror the fields in `src/content.config.ts`, so if a field is added
+or renamed in one, update the other.
 
-The 3 most recent recipes should be added to `index.html`
+### Editing files directly
+Recipes are Markdown files in `src/content/recipes/`, newsletters in `src/content/newsletters/`. Copy an existing
+file, edit its fields, and run `npm run dev` to check it; if a required field is missing or a photo path is wrong,
+the build says which file and field. Photos go in `img/` and are referenced from the root, e.g.
+`/img/recipe/butter_chicken/butter_chicken_fin.jpg`; newsletter PDFs go in `public/newsletters/`. In a recipe
+file, the text below the closing `---` is the "Performance" section. Set `unlisted: true` to publish a recipe
+without listing it.
 
-### Newletters
-
-We use [Canva](https://www.canva.com/) to make our newsletters
-
-To obtain the thumbnail for the newsletter, we use the Window's built-in `Snipping Tool`. On the bottom bar of Windows
-hit the magnifying glass and search `Snipping Tool`. Save this thumbnail to `img/blog/Newletter_GMTD*.png`.
-
-Download the newletter pdf via email and save to `newletters/GMTD Newletter *.pdf`
+We use [Canva](https://www.canva.com/) to make the newsletters.
