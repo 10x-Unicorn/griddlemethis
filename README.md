@@ -20,7 +20,6 @@ template (`public/css/style.css`).
 │   ├── layouts/Base.astro   header, footer, <head> (shared by every page)
 │   ├── components/          recipe card, page banner
 │   └── pages/               one file per route
-└── scripts/convert-legacy.mjs   one-off converter from the old hand-written HTML pages
 ```
 
 ### Local development
